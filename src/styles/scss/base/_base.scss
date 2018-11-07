@@ -1,0 +1,85 @@
+@import '../reference/index';
+
+html,
+body,
+button,
+select {
+	@include font-family-primary;
+
+	margin: 0;
+}
+
+#___gatsby > * {
+	@include body;
+
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	max-width: 90rem;
+
+	@include media-min(lg) {
+		flex-direction: row;
+		height: 100vh;
+	}
+}
+
+.main,
+.container {
+	flex: 1 1 auto;
+	
+	@include media-min(lg) {
+		flex-basis: 0;
+	}
+}
+
+.main {
+	-ms-overflow-style: none;
+	display: flex;
+	flex-grow: 3;
+	justify-content: center;
+	margin: 1.5rem 0.5rem;
+	max-height: 100%;
+	overflow-y: scroll;
+	
+	&::-webkit-scrollbar {
+		display: none;
+	}
+
+	@include media-min(lg) {
+		margin: $main-padding 3rem;
+	}
+}
+
+.container {
+	@include container;
+	
+	display: flex;
+	position: relative;
+	width: 100%;
+}
+
+.content {
+	position: relative;
+}
+
+.u-hidden {
+	@include hidden;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+
+	&:not([class]) {
+		text-decoration: underline;
+	}
+}
+
+p {
+	&:not([class]) {
+		@include paragraph;
+	}
+}

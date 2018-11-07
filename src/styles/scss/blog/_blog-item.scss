@@ -1,0 +1,48 @@
+@import '../reference/index';
+
+$block: 'blog-item';
+
+.#{$block} {
+	margin-top: 4rem;
+	padding-left: 3.5rem;
+
+	&:first-child {
+		margin-top: 0;
+	}
+
+	&__picture {
+		display: none;
+	}
+
+	&__header {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		position: relative;
+
+		&::before {
+			border-bottom: 1px solid $grey-dark;
+			bottom: 0;
+			content: '';
+			height: 1px;
+			left: 0;
+			position: absolute;
+			width: 3rem;
+		}
+	}
+
+	&__heading,
+	&__date {
+		@include font-size-19;
+	}
+
+	&__heading {
+		@include font-weight(400);
+
+		text-transform: uppercase;
+	}
+
+	&__date {
+		color: $grey-dark;
+	}
+}

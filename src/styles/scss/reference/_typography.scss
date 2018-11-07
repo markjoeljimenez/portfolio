@@ -1,0 +1,19 @@
+﻿@mixin body {
+	line-height: $line-height;
+}
+
+@mixin heading {
+	line-height: 1.25;
+}
+
+@mixin large-headline {
+	line-height: 1.125;
+}
+
+@mixin paragraph {
+	line-height: 2;
+
+	@include media-min(md) {
+		line-height: 2.625;
+	}
+}

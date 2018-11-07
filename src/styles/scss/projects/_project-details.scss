@@ -1,0 +1,56 @@
+@import '../reference/index';
+
+$block: 'project-details';
+
+.#{$block} {
+	@include even-spacing(4rem);
+
+	&__header {
+		@include even-spacing(0);
+	}
+
+	&__title {
+		@include font-weight(400);
+
+		font-size: 36px;
+		letter-spacing: 0.125rem;
+	}
+
+	&__list {
+		@include clean-list
+	}
+
+	&__item {
+		&--inline {
+			display: inline-block;
+			margin-left: 0.5rem;
+			margin-right: 0.5rem;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	&__rte {
+		@include even-spacing(0.75rem);
+
+		
+		h2 {
+			border-bottom: 1px solid #979797;
+			display: inline-block;
+			font-size: 18px;
+			letter-spacing: 0.125rem;
+			padding-bottom: 0.75rem;
+			text-transform: uppercase;
+		}
+		
+		p {
+			color: $grey-dark;
+		}
+	}
+}

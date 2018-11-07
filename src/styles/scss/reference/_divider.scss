@@ -1,0 +1,38 @@
+@import 'colors';
+
+@mixin line {
+	&::before,
+	&::after {
+		border-left: 1px solid $grey-lighter;
+		content: '';
+		height: 50%;
+		left: 50%;
+		position: relative;
+	}
+}
+
+@mixin divider {
+	@include line;
+
+	&::before {
+		bottom: 1.25rem;
+		margin-top: -50%;
+	}
+
+	&::after {
+		margin-bottom: -50%;
+		top: 1.25rem;
+	}
+}
+
+@mixin divider-full {
+	@include line;
+
+	&::before {
+		margin-left: -50%;
+	}
+
+	&::after {
+		margin-right: -50%;
+	}
+}

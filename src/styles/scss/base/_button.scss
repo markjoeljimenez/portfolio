@@ -1,0 +1,21 @@
+@import '../reference/index';
+
+$block: 'button';
+
+.#{$block} {
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+
+	&--icon {
+		@include image-replacement;
+		
+		background-color: $white;
+		border-radius: 2.5rem;
+		box-shadow: 0 0 1.5rem .25rem rgba(#ccc, 1);
+		height: 2.5rem;
+		position: relative;
+		width: 2.5rem;
+		z-index: 1;
+	}
+}

@@ -1,0 +1,11 @@
+@import '../reference/index';
+
+$block: 'pill';
+
+.#{$block} {
+	border: 1px solid $grey-dark;
+	border-radius: 0.25rem;
+	font-size: 14px;
+	padding: 0.25rem 0.75rem;
+	text-transform: uppercase;
+}

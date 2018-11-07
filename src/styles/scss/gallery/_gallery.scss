@@ -1,0 +1,81 @@
+@import '../reference/index';
+
+$block: 'gallery';
+
+.#{$block} {
+	$gutter: 1.5rem;
+	$transition: all 200ms ease-in-out;
+
+	@include row;
+
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	
+	@include media-min(md) {
+		margin-left: -$gutter;
+	}
+	
+	&__column {
+		@include media-min(md) {
+			padding-left: $gutter;
+		}
+	}
+
+	&__item {
+		margin-bottom: $gutter;
+	}
+
+	&__figure {
+		background-color: transparent;
+		margin: 0;
+		position: relative;
+		
+		&::before {
+			content: '';
+			height: 100%;
+			left: 0;
+			position: absolute;
+			top: 0;
+			transition: $transition;
+			width: 100%;
+			z-index: 1;
+		}
+		
+		@include hover {
+			&::before {
+				background-color: rgba($black, 0.85);
+			}
+
+			.#{$block}__figcaption {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__figcaption {
+		@include font-weight(600);
+
+		align-items: center;
+		color: $white;
+		display: flex;
+		height: 100%;
+		justify-content: center;
+		left: 0;
+		opacity: 0;
+		padding: 2rem;
+		position: absolute;
+		text-align: center;
+		text-transform: uppercase;
+		top: 0;
+		transition: $transition;
+		width: 100%;
+		z-index: 2;
+	}
+
+	&__image {
+		display: block;
+		max-width: 100%;
+	}
+}

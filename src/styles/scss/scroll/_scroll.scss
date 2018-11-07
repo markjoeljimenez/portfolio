@@ -1,0 +1,23 @@
+@import '../reference/index';
+
+$block: 'scroll';
+
+.#{$block} {
+	display: none;
+
+	@include media-min(md) {
+		@include divider;
+	
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-left: 3rem;
+	}
+
+	&__button {
+		svg {
+			height: 1rem;
+			width: 1rem;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+@import '../reference/index';
+
+$block: 'article';
+
+.#{$block} {
+	&__heading {
+
+	}
+
+	&__rte {
+		
+	}
+}
