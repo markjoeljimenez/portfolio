@@ -1,5 +1,5 @@
 backend:
-  name: portfolio
+  name: github
   repo: markjoeljimenez/portfolio
 
 media_folder: static/assets
