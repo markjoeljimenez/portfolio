@@ -1,25 +1,27 @@
 backend:
-  name: test-repo
+	name: portfolio
+	repo: markjoeljimenez/portfolio
 
 media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: post
-    label: Post
-    folder: posts
-    create: true
-    fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
-  - name: project
-    label: Project
-    folder: projects
-    create: true
-    fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
+- name: post
+	label: Post
+	folder: posts
+	create: true
+	fields:
+	- { name: path, label: Path }
+	- { name: date, label: Date, widget: date }
+	- { name: title, label: Title }
+	- { name: body, label: Body, widget: markdown }
+- name: project
+	label: Project
+	folder: projects
+	create: true
+	fields:
+	- { name: path, label: Path }
+	- { name: date, label: Date, widget: date }
+	- { name: title, label: Title }
+	- { name: body, label: Body, widget: markdown }
+	- { name: tag, label: Tag, widget: String }
