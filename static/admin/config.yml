@@ -11,17 +11,17 @@ collections:
 		folder: posts
 		create: true
 		fields:
-		- { name: path, label: Path }
-		- { name: date, label: Date, widget: date }
-		- { name: title, label: Title }
-		- { name: body, label: Body, widget: markdown }
+			- { name: path, label: Path }
+			- { name: date, label: Date, widget: date }
+			- { name: title, label: Title }
+			- { name: body, label: Body, widget: markdown }
 	- name: project
 		label: Project
 		folder: projects
 		create: true
 		fields:
-		- { name: path, label: Path }
-		- { name: date, label: Date, widget: date }
-		- { name: title, label: Title }
-		- { name: body, label: Body, widget: markdown }
-		- { name: tag, label: Tag, widget: string }
+			- { name: path, label: Path }
+			- { name: date, label: Date, widget: date }
+			- { name: title, label: Title }
+			- { name: body, label: Body, widget: markdown }
+			- { name: tag, label: Tag, widget: string }
