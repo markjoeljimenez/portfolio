@@ -49,7 +49,7 @@ export default function Template({ data }) {
 						<ul className="project-details__list">
 							{
 								splitToolsString(post.frontmatter.tools).map(tool => (
-									<li className="project-details__item project-details__item--inline">
+									<li className="project-details__item project-details__item--inline" key={tool}>
 										<p className="pill">{tool}</p>
 									</li>
 								))
@@ -85,6 +85,6 @@ function splitToolsString(str: string) {
 
 function checkPosts(arr, val) {
 	return arr.some(function(arrVal) {
-		return val === arrVal.tag;
+		return arrVal.node.childMarkdownRemark.frontmatter.tag === val;
 	});
 }
