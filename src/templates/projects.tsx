@@ -62,7 +62,7 @@ export default function Template({ data }) {
 					<article className="project-details__rte" dangerouslySetInnerHTML={{__html: post.html}}/>
 				</section>
 
-				{blogPosts.length ? (
+				{checkPosts(blogPosts, post.frontmatter.tag) ? (
 					<section className="project-details__section">
 						<article className="project-details__rte">
 							<h2>Blog posts</h2>
@@ -81,4 +81,10 @@ export default function Template({ data }) {
 
 function splitToolsString(str: string) {
 	return str.split(' | ');
+}
+
+function checkPosts(arr, val) {
+	return arr.some(function(arrVal) {
+		return val === arrVal.tag;
+	});
 }
