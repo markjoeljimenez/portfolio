@@ -3,9 +3,11 @@ import { graphql, Link } from 'gatsby';
 
 import Layout from '../layouts/default';
 
+const create = require('../scripts/utilities/createFilePath');
+
 export const postQuery = graphql`
-	query ProjectPostByPath($path: String!) {
-		markdownRemark(frontmatter: { path: { eq: $path} }) {
+	query ProjectPostByPath {
+		markdownRemark {
 			html
 			frontmatter {
 				date
@@ -23,7 +25,7 @@ export const postQuery = graphql`
 					childMarkdownRemark {
 						frontmatter {
 							title
-							path
+							date
 							image {
 								publicURL
 							}
@@ -68,7 +70,7 @@ export default function Template({ data }) {
 							<h2>Blog posts</h2>
 							{blogPosts.filter(blogPost => blogPost.node.childMarkdownRemark.frontmatter.tag === post.frontmatter.tag).map(blogPost => (
 								<p key={blogPost.node.id}>
-									<Link to={blogPost.node.childMarkdownRemark.frontmatter.path}>{blogPost.node.childMarkdownRemark.frontmatter.title}</Link>
+									<Link to={create.filePath(blogPost.node)}>{blogPost.node.childMarkdownRemark.frontmatter.title}</Link>
 								</p>
 							))}
 						</article>

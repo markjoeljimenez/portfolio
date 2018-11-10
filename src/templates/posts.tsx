@@ -4,7 +4,7 @@ import { graphql } from 'gatsby';
 import Layout from '../layouts/default';
 
 export default function Template({ data }) {
-	const { markdownRemark: post } = data;
+	const post = data.markdownRemark;
 
 	return (
 		<Layout>
@@ -20,12 +20,11 @@ export default function Template({ data }) {
 }
 
 export const postQuery = graphql`
-	query BlogPostByPath($path: String!) {
-		markdownRemark(frontmatter: { path: { eq: $path} }) {
+	query BlogPostByPath {
+		markdownRemark {
 			html
 			frontmatter {
 				date
-				path
 				title
 			}
 		}
