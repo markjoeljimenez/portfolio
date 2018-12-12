@@ -35,7 +35,8 @@ exports.createPages = ({actions, graphql}) => {
 
 		res.data.allFile.edges.forEach(({node}) => {
 			createPage({
-				path: node.sourceInstanceName === 'projects' ? node.childMarkdownRemark.frontmatter.path : create.filePath(node),
+				path: node.childMarkdownRemark.frontmatter.path,
+				// path: node.sourceInstanceName === 'projects' ? node.childMarkdownRemark.frontmatter.path : create.filePath(node),
 				component: path.resolve(`src/templates/${node.sourceInstanceName}.tsx`)
 			})
 		})

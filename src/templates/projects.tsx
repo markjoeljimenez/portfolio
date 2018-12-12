@@ -26,6 +26,7 @@ export const postQuery = graphql`
 						frontmatter {
 							title
 							date
+							path
 							image {
 								publicURL
 							}
@@ -70,7 +71,7 @@ export default function Template({ data }) {
 							<h2>Blog posts</h2>
 							{blogPosts.filter(blogPost => blogPost.node.childMarkdownRemark.frontmatter.tag === post.frontmatter.tag).map(blogPost => (
 								<p key={blogPost.node.id}>
-									<Link to={create.filePath(blogPost.node)}>{blogPost.node.childMarkdownRemark.frontmatter.title}</Link>
+									<Link to={blogPost.node.childMarkdownRemark.frontmatter.path}>{blogPost.node.childMarkdownRemark.frontmatter.title}</Link>
 								</p>
 							))}
 						</article>

@@ -20,6 +20,7 @@ const BlogPage = () => (
 							frontmatter {
 								date
 								title
+								path
 								image {
 									publicURL
 								}
@@ -40,9 +41,9 @@ const BlogPage = () => (
 								<li className="blog__item" key={post.node.id}>
 									<div className="blog__header">
 										<h1 className="blog__heading">
-											<a href={create.filePath(post.node)} className="blog__link">
+											<Link to={post.node.childMarkdownRemark.frontmatter.path} className="blog__link">
 												{post.node.childMarkdownRemark.frontmatter.title}
-											</a>
+											</Link>
 										</h1>
 										<p className="blog__date">{post.node.childMarkdownRemark.frontmatter.date}</p>
 									</div>
