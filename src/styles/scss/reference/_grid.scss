@@ -21,12 +21,12 @@ $grid-max-width: 42rem !default;
 $main-padding: 8rem;
 
 /// A container of rows, preventing grids from taking full-width of the page.
-@mixin container {
+@mixin container($width: $grid-max-width) {
 	$padding-horizontal: 1rem;
 
 	margin-left: auto;
 	margin-right: auto;
-	max-width: $grid-max-width;
+	max-width: $width;
 	padding-left: $padding-horizontal;
 	padding-right: $padding-horizontal;
 }
