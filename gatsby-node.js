@@ -1,4 +1,3 @@
-const create = require('./src/scripts/utilities/createFilePath.ts');
 const path = require('path');
 
 exports.createPages = ({actions, graphql}) => {
@@ -36,7 +35,6 @@ exports.createPages = ({actions, graphql}) => {
 		res.data.allFile.edges.forEach(({node}) => {
 			createPage({
 				path: node.childMarkdownRemark.frontmatter.path,
-				// path: node.sourceInstanceName === 'projects' ? node.childMarkdownRemark.frontmatter.path : create.filePath(node),
 				component: path.resolve(`src/templates/${node.sourceInstanceName}.tsx`)
 			})
 		})
