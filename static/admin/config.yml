@@ -27,3 +27,4 @@ collections:
       - { name: body, label: Body, widget: markdown }
       - { name: tag, label: Tag, widget: string }
       - { name: tools, label: Tools, widget: string }
+      - { name: image, label: Cover Image, widget: image }
