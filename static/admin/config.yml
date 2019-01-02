@@ -2,7 +2,7 @@ backend:
   name: github
   repo: markjoeljimenez/portfolio
 
-media_folder: static/assets
+media_folder: src/projects/assets
 public_folder: assets
 
 collections:
