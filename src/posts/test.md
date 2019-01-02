@@ -1,7 +1,9 @@
 ---
-path: test
+path: posts/hello-world
 date: 2019-01-02T08:59:10.027Z
-title: test
-tag: test
+title: Hello world!
+tag: new-beginnings
 ---
-hello world
+Hello!
+
+This is a test post!
