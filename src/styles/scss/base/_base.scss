@@ -64,10 +64,12 @@ select {
 			background: linear-gradient(transparent -5rem, $white 2rem);
 			bottom: -1.5rem;
 			left: 50%;
+			opacity: 1;
 			padding-top: 2rem;
 			position: absolute;
 			width: 100%;
 			transform: translateX(-50%);
+			transition: 100ms all ease-in-out;
 		}
 
 		&__button {
@@ -81,7 +83,6 @@ select {
 			cursor: pointer;
 			display: inline-block;
 			padding: 0.75rem;
-			transition: 100ms all ease-in-out;
 
 			svg {
 				display: block;

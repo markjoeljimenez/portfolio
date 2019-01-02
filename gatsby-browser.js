@@ -10,6 +10,10 @@ exports.onRouteUpdate = () => {
 	toggleScrollButton();
 }
 
+exports.onClientEntry = () => {
+	toggleScrollButton();
+}
+
 function toggleScrollButton() {
 	const content = document.querySelector('.container');
 
