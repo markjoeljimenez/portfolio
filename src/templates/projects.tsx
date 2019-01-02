@@ -3,8 +3,14 @@ import { graphql, Link } from 'gatsby';
 
 import Layout from '../layouts/default';
 
-const create = require('../scripts/utilities/createFilePath');
-
+/**
+ * Each project will need several frontmatter:
+ * - Title
+ * - Path
+ * - Date
+ * - Tag
+ * - Tools
+ */
 export const postQuery = graphql`
 	query ProjectPostByPath {
 		markdownRemark {
