@@ -3,7 +3,7 @@ import { StaticQuery, Link, graphql } from 'gatsby'
 
 import Layout from '../layouts/default'
 
-const create = require('../scripts/utilities/createFilePath.ts');
+const dateFns = require('date-fns');
 
 const BlogPage = () => (
 	<StaticQuery
@@ -46,7 +46,7 @@ const BlogPage = () => (
 													{post.node.childMarkdownRemark.frontmatter.title}
 												</Link>
 											</h1>
-											<p className="blog__date">{post.node.childMarkdownRemark.frontmatter.date}</p>
+											<p className="blog__date">{dateFns.format(new Date(post.node.childMarkdownRemark.frontmatter.date), 'MM DD YY')}</p>
 										</div>
 										<div className="blog__content" dangerouslySetInnerHTML={{__html: post.node.childMarkdownRemark.html}}/>
 									</li>
