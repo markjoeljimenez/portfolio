@@ -24,6 +24,7 @@ const BlogPage = () => (
 								image {
 									publicURL
 								}
+								tag
 							}
 							html
 						}
@@ -40,13 +41,16 @@ const BlogPage = () => (
 							<ul className="blog__list">
 								{data.allFile.edges.map(post => (
 									<li className="blog__item" key={post.node.id}>
-										<div className="blog__header">
-											<h1 className="blog__heading">
-												<Link to={post.node.childMarkdownRemark.frontmatter.path} className="blog__link">
-													{post.node.childMarkdownRemark.frontmatter.title}
-												</Link>
-											</h1>
-											<p className="blog__date">{dateFns.format(new Date(post.node.childMarkdownRemark.frontmatter.date), 'MM DD YY')}</p>
+										<div className="blog__header-container">
+											<div className="blog__header">
+												<h1 className="blog__heading">
+													<Link to={post.node.childMarkdownRemark.frontmatter.path} className="blog__link">
+														{post.node.childMarkdownRemark.frontmatter.title}
+													</Link>
+												</h1>
+												<p className="blog__date">{dateFns.format(new Date(post.node.childMarkdownRemark.frontmatter.date), 'MM DD YY')}</p>
+											</div>
+											<p className="blog__tag">{post.node.childMarkdownRemark.frontmatter.tag}</p>
 										</div>
 										<div className="blog__content" dangerouslySetInnerHTML={{__html: post.node.childMarkdownRemark.html}}/>
 									</li>
