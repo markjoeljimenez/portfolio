@@ -15,7 +15,7 @@ $block: 'gallery';
 		display: flex;
 		flex-wrap: wrap;
 		margin-left: -$gutter / 2;
-		margin-top: -$gutter;
+		margin-top: -1.5rem;
 	}
 	
 	&__column {
