@@ -3,7 +3,7 @@ backend:
   repo: markjoeljimenez/portfolio
 
 media_folder: src/images/assets
-public_folder: ./images/assets
+public_folder: ../images/assets
 
 collections:
   - name: post
