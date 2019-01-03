@@ -12,8 +12,8 @@ import Layout from '../layouts/default';
  * - Tools
  */
 export const postQuery = graphql`
-	query ProjectPostByPath {
-		markdownRemark {
+	query ProjectPostByPath($path: String!) {
+		markdownRemark(frontmatter: { path: { eq: $path} }) {
 			html
 			frontmatter {
 				date
