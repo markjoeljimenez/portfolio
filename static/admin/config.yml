@@ -2,8 +2,8 @@ backend:
   name: github
   repo: markjoeljimenez/portfolio
 
-media_folder: src/projects/assets
-public_folder: assets
+media_folder: src/images/assets
+public_folder: ../images/assets
 
 collections:
   - name: post
