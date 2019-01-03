@@ -1,0 +1,7 @@
+@import '../reference/index';
+
+$block: 'introduction';
+
+.#{$block} {
+	@include paragraph;
+}
