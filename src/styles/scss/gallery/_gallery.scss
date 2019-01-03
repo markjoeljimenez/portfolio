@@ -3,28 +3,36 @@
 $block: 'gallery';
 
 .#{$block} {
-	$gutter: 1.5rem;
+	$gutter: 1.25rem;
 	$transition: all 200ms ease-in-out;
-
-	@include row;
 
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	
+
 	@include media-min(md) {
-		margin-left: -$gutter;
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: -$gutter / 2;
+		margin-top: -$gutter;
 	}
 	
 	&__column {
+		margin-top: -$gutter;
+
 		@include media-min(md) {
+			margin-top: 0;
 			padding-left: $gutter;
 		}
 	}
-
+	
 	&__item {
-		margin-bottom: $gutter;
+		margin-top: $gutter;
+
+		&:first-child {
+			margin-top: 1.5rem;
+		}
 	}
 
 	&__figure {

@@ -3,7 +3,7 @@
 $block: 'project-details';
 
 .#{$block} {
-	@include even-spacing(4rem);
+	@include even-spacing(2rem);
 
 	&__header {
 		@include even-spacing(0);
@@ -13,7 +13,6 @@ $block: 'project-details';
 		@include font-weight(400);
 
 		font-size: 36px;
-		letter-spacing: 0.125rem;
 	}
 
 	&__list {
