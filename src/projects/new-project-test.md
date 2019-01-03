@@ -3,7 +3,7 @@ path: projects/test2
 title: new project test
 date: 2019-01-02T10:17:22.218Z
 tag: test
-tools: test
+tools: html
 image: /assets/brayden-law-1264966-unsplash.jpg
 ---
 hello!
