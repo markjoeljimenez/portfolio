@@ -7,7 +7,7 @@ import Header from '../components/header'
 import Container from '../components/container';
 import '../styles/scss/style.scss'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, alignment }) => (
 	<StaticQuery
 		query={graphql`
 			query SiteTitleQuery {
@@ -45,7 +45,7 @@ const Layout = ({ children }) => (
 					menuPages={data.site.siteMetadata.menuPages}
 					logo={data.allFile.edges[0].node}/>
 			<div className="main">
-				<Container>
+				<Container alignment={alignment}>
 					{children}
 				</Container>
 			</div>

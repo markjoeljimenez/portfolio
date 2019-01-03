@@ -3,9 +3,9 @@ import getControl from '../scripts/utilities/getControl';
 
 const debounce = require('lodash.debounce');
 
-export default ({children}) => {
+export default ({children, alignment}) => {
 	return (
-		<div className="main__scroll" id="scrollContainer" onScroll={(e) => {
+		<div className={`main__scroll ${alignment ? `main__scroll--${alignment}` : ''}`} id="scrollContainer" onScroll={(e) => {
 			e.persist(); 
 			onScrollEvent();
 		}}>
