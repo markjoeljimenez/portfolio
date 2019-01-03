@@ -130,3 +130,9 @@ a {
 		text-decoration: underline;
 	}
 }
+
+p {
+	&:not([class]) {
+		@include paragraph;
+	}
+}
