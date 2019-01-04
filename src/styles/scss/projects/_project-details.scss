@@ -16,7 +16,13 @@ $block: 'project-details';
 	}
 
 	&__list {
-		@include clean-list
+		@include clean-list;
+
+		&--links {
+			.#{$block}__item {
+				margin-top: 0.5rem;
+			}
+		}
 	}
 
 	&__item {
@@ -32,6 +38,19 @@ $block: 'project-details';
 			&:last-child {
 				margin-right: 0;
 			}
+		}
+
+		.pill {
+			margin-bottom: 0;
+		}
+
+		svg {
+			margin-right: 0.5rem;
+			vertical-align: text-top;
+		}
+
+		p {
+			line-height: 1;
 		}
 	}
 

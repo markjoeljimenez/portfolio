@@ -11,9 +11,11 @@ export default function Template({ data }) {
 	return (
 		<Layout>
 			<article className="blog">
-				<div className="blog__header">
-					<h1 className="blog__heading">{post.frontmatter.title}</h1>
-					<span className="blog__date">{dateFns.format(new Date(post.frontmatter.date), 'MM DD YY')}</span>
+				<div className="blog__header-container">
+					<div className="blog__header">
+						<h1 className="blog__heading">{post.frontmatter.title}</h1>
+						<span className="blog__date">{dateFns.format(new Date(post.frontmatter.date), 'MM DD YY')}</span>
+					</div>
 				</div>
 				<div className="blog__rte" dangerouslySetInnerHTML={{__html: post.html}} />
 			</article>
