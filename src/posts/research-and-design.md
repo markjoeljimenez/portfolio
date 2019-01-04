@@ -1,19 +1,21 @@
 ---
-path: /posts/dk-lineup-optimizer/01-03-19-research-and-design
+title: Initial thoughts
 date: 2019-01-03T10:29:53.266Z
-title: Research and design
 tag: dk-lineup-optimizer
+path: /posts/dk-lineup-optimizer/01-03-19-initial-thoughts
 ---
-Medium whipped, crema mug a whipped id espresso. Brewed, viennese grinder breve crema grinder single origin dark aroma.
+After learning about the knapsack problem and it's solutions, I instantly knew that this could be applied to optimizing my NBA drafts in DraftKings.
 
+Some main features that I want to include:
 
+* Adhere to [DK NBA drafting rules](https://www.draftkings.com/help/rules/nba)
+* Using stats provided by DK to optimize line up:
+  * **FPPG** (fantasy points per game)
+  * **OPRK** (offensive/defensive rating vs opposing team)
+* Put emphasis/select higher player salaries on certain positions
 
-Siphon mug, con panna robusta trifecta whipped flavour. Café au lait cultivar black instant whipped instant rich pumpkin spice carajillo.
+And for some future features:
 
-
-
-Cappuccino, bar whipped frappuccino strong mocha cup chicory con panna lungo flavour. Cortado fair trade bar, a plunger pot ut carajillo dripper.
-
-
-
-Crema café au lait, half and half mocha, a strong instant cultivar and strong. Cup doppio half and half latte dark sweet ristretto blue mountain.
+* Live game stats (provided by Google?)
+* Able to customize line-up dynamically (drag and drop?)
+* NBA advanced stats when viewing a player
