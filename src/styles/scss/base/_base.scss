@@ -52,6 +52,12 @@ select {
 		&--middle {
 			align-items: center;
 			display: flex;
+
+			p {
+				@include media-min(md) {
+					line-height: 2.625 !important;
+				}
+			}
 		}
 	}
 

@@ -38,9 +38,9 @@ const BlogPage = () => (
 				<Layout>
 					<div className="blog">
 						<div className="blog__scroll">
-							<ul className="blog__list">
+							<div className="blog__list">
 								{data.allFile.edges.map(post => (
-									<li className="blog__item" key={post.node.id}>
+									<div className="blog__item" key={post.node.id}>
 										<div className="blog__header-container">
 											<div className="blog__header">
 												<h1 className="blog__heading">
@@ -52,10 +52,10 @@ const BlogPage = () => (
 											</div>
 											<p className="blog__tag">{post.node.childMarkdownRemark.frontmatter.tag}</p>
 										</div>
-										<div className="blog__content" dangerouslySetInnerHTML={{__html: post.node.childMarkdownRemark.html}}/>
-									</li>
+										<div className="blog__rte" dangerouslySetInnerHTML={{__html: post.node.childMarkdownRemark.html}}/>
+									</div>
 								))}
-							</ul>
+							</div>
 						</div>
 					</div>
 				</Layout>

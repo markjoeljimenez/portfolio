@@ -13,7 +13,7 @@
 @mixin paragraph {
 	line-height: 2;
 
-	@include media-min(md) {
-		line-height: 2.625;
-	}
+	// @include media-min(md) {
+	// 	line-height: 2.625;
+	// }
 }
