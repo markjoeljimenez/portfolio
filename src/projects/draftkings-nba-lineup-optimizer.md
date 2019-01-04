@@ -6,8 +6,10 @@ tag: dk-lineup-optimizer
 tools: html | css | javascript
 image: /../images/assets/stephen-baker-507933-unsplash.jpg
 ---
-## Scope
+## Description
 
-Arabica, extra, redeye, americano café au lait body, white, mocha fair trade instant mocha steamed. Skinny french press strong, ristretto decaffeinated dark extra affogato breve seasonal.
+Using [the knapsack problem](https://en.wikipedia.org/wiki/Knapsack_problem), this website aims to generate the most optimized line-ups for DraftKings.
 
-Breve, sit, medium wings caffeine carajillo sit pumpkin spice mocha cup that aroma. Chicory, that, aftertaste, caramelization crema, plunger pot, whipped, con panna java single shot variety wings.
+## Features
+
+* Simple line-up generation based on **player dollar value** vs **total dollars**.
