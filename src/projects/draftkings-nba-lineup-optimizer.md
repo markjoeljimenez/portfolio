@@ -1,10 +1,15 @@
 ---
-path: /projects/dk-lineup-optimizer
+image: /../images/assets/stephen-baker-507933-unsplash.jpg
 title: DraftKings NBA Lineup Optimizer
 date: 2019-01-03T10:07:26.014Z
-tag: dk-lineup-optimizer
 tools: html | css | javascript
-image: /../images/assets/stephen-baker-507933-unsplash.jpg
+tag: dk-lineup-optimizer
+path: /projects/dk-lineup-optimizer
+website:
+  githubLink: 'https://github.com/markjoeljimenez/dk-lineup-optimizer'
+  githubTitle: Github
+  websiteLink: 'https://markjoeljimenez.github.io/dk-lineup-optimizer/'
+  websiteTitle: DK Line-up Optimizer
 ---
 ## Description
 
