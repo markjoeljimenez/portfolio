@@ -38,7 +38,8 @@ $block: 'project-details';
 	&__rte {
 		@include even-spacing(0.75rem);
 
-		
+		color: $grey-dark;
+
 		h2 {
 			border-bottom: 1px solid #979797;
 			display: inline-block;
@@ -47,9 +48,10 @@ $block: 'project-details';
 			padding-bottom: 0.75rem;
 			text-transform: uppercase;
 		}
-		
-		p {
-			color: $grey-dark;
+
+		h2,
+		strong {
+			color: $black;
 		}
 	}
 }
