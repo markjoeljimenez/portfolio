@@ -6,29 +6,29 @@
 
 // You can delete this file if you're not using it
 
-exports.onRouteUpdate = () => {
-	toggleScrollButton();
-}
+// exports.onRouteUpdate = () => {
+// 	toggleScrollButton();
+// }
 
-exports.onClientEntry = () => {
-	toggleScrollButton();
-}
+// exports.onClientEntry = () => {
+// 	toggleScrollButton();
+// }
 
-function toggleScrollButton() {
-	const content = document.querySelector('.container');
+// function toggleScrollButton() {
+// 	const content = document.querySelector('.container');
 
-	if (content) {
-		const container = content.parentElement;
+// 	if (content) {
+// 		const container = content.parentElement;
 
-		if (container) {
-			const containerHeight = container.getBoundingClientRect().height;
-			const contentHeight = content.getBoundingClientRect().height;
+// 		if (container) {
+// 			const containerHeight = container.getBoundingClientRect().height;
+// 			const contentHeight = content.getBoundingClientRect().height;
 
-			const scrollButton = container.querySelector('.main__button-container');
+// 			const scrollButton = container.querySelector('.main__button-container');
 			
-			if (scrollButton instanceof HTMLElement && contentHeight < containerHeight) {
-				scrollButton.style.display = 'none';
-			}
-		}
-	}
-}
+// 			if (scrollButton instanceof HTMLElement && contentHeight < containerHeight) {
+// 				scrollButton.style.display = 'none';
+// 			}
+// 		}
+// 	}
+// }

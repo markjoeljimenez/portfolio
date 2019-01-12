@@ -1,0 +1,9 @@
+@import '../reference/index';
+
+$block: 'intro';
+
+.#{$block} {
+	p {
+		line-height: 2.5;
+	}
+}

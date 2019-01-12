@@ -9,7 +9,7 @@ $block: 'aside-main';
 	position: relative;
 	
 	@include media-min(lg) {
-		padding: 2rem 5rem;
+		padding: 2rem;
 	}
 	
 	@include media-min(lg) {

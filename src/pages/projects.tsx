@@ -41,7 +41,7 @@ const Projects = () => (
 		}`}
 		render={data => (
 			<>
-				<Layout>
+				<Layout alignment="middle">
 					<Masonry
 						breakpointCols={breakpointColumnsObj}
 						className="gallery"
