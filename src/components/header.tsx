@@ -19,7 +19,18 @@ function onMenuClick(e) {
 
 const Header = ({ title, menuPages, logo }) => (
 	<>
-		<aside className="aside-main">
+		<nav className="header">
+			<div className="header__container">
+				<ul className="header__list">
+					{menuPages.map(page => (
+						<li className="header__item" key={page.name}>
+							<Link to={page.link} activeClassName="header__link--active" className="header__link">{page.name}</Link>
+						</li>
+					))}
+				</ul>
+			</div>
+		</nav>
+		{/* <nav className="aside-main">
 			<div className="aside-main__content" id="header">
 				<div className="aside-main__header">
 					<Link to="/">
@@ -57,7 +68,7 @@ const Header = ({ title, menuPages, logo }) => (
 					</svg>
 				</button>
 			</div>
-		</aside>
+		</nav> */}
 	</>
 )
 

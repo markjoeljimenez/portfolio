@@ -1,0 +1,17 @@
+@import '../reference/index';
+
+$block: 'hero-panel';
+
+.#{$block} {
+	h1 {
+		@include font-size-72;
+
+		@include font-weight(100);
+
+		color: $grey-darker;
+	}
+
+	a {
+		color: $primary;
+	}
+}

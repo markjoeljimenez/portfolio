@@ -1,0 +1,37 @@
+@import '../reference/index';
+
+$block: 'header';
+
+.#{$block} {
+	@include font-size-14;
+
+	&__container {
+		@include container;
+	}
+
+	&__list {
+		@include clean-list;
+
+		margin-bottom: 1.75rem;
+		margin-top: 1.75rem;
+	}
+
+	&__item {
+		display: inline-block;
+		margin-left: 1.3125rem;
+		margin-right: 1.3125rem;
+		text-transform: uppercase;
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&__link {
+		@include color-states($black, $primary, $primary);
+	}
+}

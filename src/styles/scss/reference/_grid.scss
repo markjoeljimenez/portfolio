@@ -5,7 +5,7 @@
 $grid-columns: 12 !default;
 
 // Width of a column after the grid has reached the max width. Used for calculations
-$grid-column-width: 5rem !default;
+$grid-column-width: 2rem !default;
 
 // Width of a column gutter.
 $grid-gutter-width: (
@@ -15,7 +15,7 @@ $grid-gutter-width: (
 );
 
 // Maximum width of the grid.
-$grid-max-width: 42rem !default;
+$grid-max-width: 70rem !default;
 
 // Padding for aside-main and main content (on desktop)
 $main-padding: 8rem;

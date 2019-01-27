@@ -1,18 +1,21 @@
 $line-height: 1.5;
 $default-font: 'Source Sans Pro' !default;
+$default-color: $black !default;
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
 
 @mixin font-family-primary {
 	font-family: $default-font, sans-serif;
+
+	color: $default-color;
 }
 
 @mixin font-family-system {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 }
 
-@mixin font-size-13 {
-	font-size: .8125rem;
+@mixin font-size-14 {
+	font-size: 0.875rem;
 }
 
 @mixin font-size-16 {
@@ -39,6 +42,12 @@ $default-font: 'Source Sans Pro' !default;
 	@include large-headline;
 
 	font-size: 3.5625rem;
+}
+
+@mixin font-size-72 {
+	@include large-headline;
+
+	font-size: 4.5rem;
 }
 
 @mixin font-weight($weight) {
