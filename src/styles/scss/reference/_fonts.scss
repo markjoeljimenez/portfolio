@@ -22,8 +22,8 @@ $default-color: $black !default;
 	font-size: 1rem;
 }
 
-@mixin font-size-19 {
-	font-size: 1.1875rem;
+@mixin font-size-18 {
+	font-size: 1.125rem;
 }
 
 @mixin font-size-24 {
@@ -39,6 +39,12 @@ $default-color: $black !default;
 }
 
 @mixin font-size-57 {
+	@include large-headline;
+
+	font-size: 4rem;
+}
+
+@mixin font-size-64 {
 	@include large-headline;
 
 	font-size: 3.5625rem;

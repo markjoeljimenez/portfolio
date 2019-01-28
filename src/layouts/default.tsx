@@ -45,9 +45,7 @@ const Layout = ({ children, alignment }) => (
 					menuPages={data.site.siteMetadata.menuPages}
 					logo={data.allFile.edges[0].node}/>
 			<div className="main">
-				<Container alignment={alignment}>
-					{children}
-				</Container>
+				{children}
 			</div>
 		</>
 		)}

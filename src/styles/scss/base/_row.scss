@@ -1,0 +1,9 @@
+@import '../reference/index';
+
+$block: 'row';
+
+.#{$block} {
+	@include media-min(md) {
+		@include row;
+	}
+}

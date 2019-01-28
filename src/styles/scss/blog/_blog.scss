@@ -50,7 +50,7 @@ $block: 'blog';
 
 	&__heading,
 	&__date {
-		@include font-size-19;
+		@include font-size-18;
 
 		@include font-weight(400);
 

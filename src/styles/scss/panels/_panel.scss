@@ -5,4 +5,61 @@ $block: 'panel';
 .#{$block} {
 	margin-bottom: 10rem;
 	margin-top: 10rem;
+
+	&--light {
+		background-color: $grey-light;
+	}
+
+	&--dark {
+		background-color: $primary;
+		color: $white;
+	}
+
+	&--has-background {
+		margin: 0;
+		padding-bottom: 9.125rem;
+		padding-top: 9.125rem;
+	}
+
+	&__container {
+		@include container;
+	}
+
+	&__picture,
+	&__image {
+		display: block;
+		width: 100%;
+	}
+
+	&__heading {
+		@include font-size-64;
+
+		@include font-weight(100);
+
+		margin: 0;
+	}
+
+	&__subheading {
+		@include font-size-18;
+
+		color: $grey;
+		padding-left: 2rem;
+		position: relative;
+
+		&::before {
+			$border-height: 1px;
+
+			border-bottom: $border-height solid $grey;
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 50%;
+			margin-top: -$border-height / 2;
+			width: 1.5rem;
+		}
+	}
+
+	&__rte {
+		color: $primary;
+	}
 }

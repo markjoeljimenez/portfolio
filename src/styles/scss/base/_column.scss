@@ -1,0 +1,13 @@
+@import '../reference/index';
+
+$block: 'column';
+
+.#{$block} {
+	@include column;
+
+	&--md-6 {
+		@include media-min(md) {
+			@include column(6);
+		}
+	}
+}
