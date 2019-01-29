@@ -3,7 +3,21 @@
 $block: 'row';
 
 .#{$block} {
+	margin-top: -2rem;
+
+	& + & {
+		margin-top: 2rem;
+	}
+
 	@include media-min(md) {
 		@include row;
+	}
+
+	&--center {
+		justify-content: center;
+	}
+
+	&--no-margin-top {
+		margin-top: 0;
 	}
 }

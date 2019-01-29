@@ -3,8 +3,16 @@
 $block: 'panel';
 
 .#{$block} {
-	margin-bottom: 10rem;
-	margin-top: 10rem;
+	$spacing-md: 10rem;
+	$spacing: $spacing-md / 3;
+
+	margin-bottom: $spacing;
+	margin-top: $spacing;
+
+	@include media-min(md) {
+		margin-bottom: $spacing-md;
+		margin-top: $spacing-md;
+	}
 
 	&--light {
 		background-color: $grey-light;
@@ -15,10 +23,60 @@ $block: 'panel';
 		color: $white;
 	}
 
+	&--reverse {
+		.row {
+			display: flex;
+			flex-direction: column;
+
+			@include media-min(md) {
+				flex-direction: row;
+			}
+		}
+
+		.column {
+			flex-basis: auto;
+		}
+
+		.#{$block}__content {
+			order: 1;
+
+			@include media-min(md) {
+				order: initial;
+			}
+		}
+	}
+
 	&--has-background {
 		margin: 0;
-		padding-bottom: 9.125rem;
-		padding-top: 9.125rem;
+		padding-bottom: $spacing;
+		padding-top: $spacing;
+
+		@include media-min(md) {
+			padding-bottom: $spacing-md;
+			padding-top: $spacing-md;
+		}
+
+		&.#{$block}--small-spacing {
+			margin: 0;
+
+			@include media-min(md) {
+				padding-bottom: $spacing;
+				padding-top: $spacing;
+			}
+		}
+	}
+
+	&--small-spacing {
+		@include media-min(md) {
+			margin-bottom: $spacing;
+			margin-top: $spacing;
+		}
+	}
+
+	&--text-align {
+		&-center {
+			text-align: center;
+		}
 	}
 
 	&__container {
@@ -32,14 +90,22 @@ $block: 'panel';
 	}
 
 	&__heading {
-		@include font-size-64;
+		@include font-size-48;
 
 		@include font-weight(100);
-
+		
 		margin: 0;
+		
+		@include media-min(md) {
+			@include font-size-64;
+		}
+	}
+	
+	&__subheading {
+		@include font-size-24;
 	}
 
-	&__subheading {
+	&__client {
 		@include font-size-18;
 
 		color: $grey;
@@ -59,7 +125,43 @@ $block: 'panel';
 		}
 	}
 
+	&__list {
+		@include clean-list;
+	}
+
+	&__item {
+		margin-bottom: 1rem;
+		margin-top: 1rem;
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
 	&__rte {
 		color: $primary;
+	}
+
+	&__footer {
+		text-align: center;
+		margin-top: 2rem;
+
+		@include media-min(md) {
+			text-align: initial;
+		}
+	}
+
+	&__link {
+		&--icon {
+			svg {
+				fill: $primary;
+				margin-right: 0.5rem;
+				vertical-align: middle;
+			}
+		}
 	}
 }

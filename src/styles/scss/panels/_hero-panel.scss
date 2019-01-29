@@ -4,11 +4,16 @@ $block: 'hero-panel';
 
 .#{$block} {
 	h1 {
-		@include font-size-72;
+		@include font-size-57;
 
 		@include font-weight(100);
-
+		
 		color: $grey-darker;
+		margin: 0;
+		
+		@include media-min(md) {
+			@include font-size-72;
+		}
 	}
 
 	a {

@@ -3,9 +3,20 @@
 $block: 'button';
 
 .#{$block} {
-	background-color: transparent;
+	@include font-weight(600);
+
+	background-color: $white;
 	border: 0;
+	border-radius: 0.25rem;
+	color: $black;
+	display: inline-block;
+	padding: 0.75rem 1.25rem;
 	cursor: pointer;
+	text-transform: uppercase;
+
+	@include hover-focus {
+		text-decoration: none;
+	}
 
 	&--icon {
 		@include image-replacement;

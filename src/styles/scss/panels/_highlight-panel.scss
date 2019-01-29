@@ -1,0 +1,9 @@
+@import '../reference/index';
+
+$block: 'highlight-panel';
+
+.#{$block} {
+	&__button {
+		margin-top: 2rem;
+	}
+}

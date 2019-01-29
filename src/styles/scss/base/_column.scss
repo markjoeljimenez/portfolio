@@ -1,13 +1,49 @@
 @import '../reference/index';
 
+@mixin column-classes($size) {
+	@for $i from 1 through 12 {
+		@include media-min($size) {
+			&--#{$size}-#{$i} {
+				@include column-width($i);
+			}
+
+			&--#{$size}-push-#{$i} {
+				@include column-push($i);
+			}
+
+			&--#{$size}-pull-#{$i} {
+				@include column-pull($i);
+			}
+		}
+	}
+}
+
 $block: 'column';
 
 .#{$block} {
 	@include column;
 
-	&--md-6 {
-		@include media-min(md) {
-			@include column(6);
+	list-style: none;
+	margin-top: 2rem;
+
+	@for $i from 1 through 12 {
+		&--#{$i} {
+			@include column-width($i);
+		}
+
+		&--push-#{$i} {
+			@include column-push($i);
+		}
+
+		&--pull-#{$i} {
+			@include column-pull($i);
 		}
 	}
+
+	@include column-classes(xxs);
+	@include column-classes(xs);
+	@include column-classes(sm);
+	@include column-classes(md);
+	@include column-classes(lg);
+	@include column-classes(xl);
 }

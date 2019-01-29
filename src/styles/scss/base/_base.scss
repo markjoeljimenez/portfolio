@@ -9,69 +9,16 @@ select {
 	margin: 0;
 }
 
-// #___gatsby > * {
-// 	@include body;
+.main {
+	margin-top: calc(10rem / 3 + 3.5rem);
 
-// 	display: flex;
-// 	flex-direction: column;
-// 	margin: 0 auto;
-// 	max-width: 90rem;
-
-// 	@include media-min(lg) {
-// 		flex-direction: row;
-// 		height: 100vh;
-// 	}
-// }
-
-// .main,
-// .container {
-// 	flex: 1 1 auto;
-	
-// 	@include media-min(lg) {
-// 		flex-basis: 0;
-// 	}
-// }
-
-// .main {
-// 	-ms-overflow-style: none;
-// 	display: flex;
-// 	flex-grow: 3;
-// 	justify-content: center;
-// 	margin-bottom: 1.25rem;
-// 	margin-top: 1.25rem;
-// 	max-height: 100%;
-// 	position: relative;
-
-// 	&__scroll {
-// 		width: 100%;
-		
-// 		&--middle {
-// 			align-items: center;
-// 			display: flex;
-// 		}
-// 	}
-
-// 	@include media-min(lg) {
-// 		margin-bottom: 2rem;
-// 		margin-top: 2rem;
-
-// 		&__scroll {
-// 			height: 100%;
-// 			overflow-y: scroll;
-			
-// 			&::-webkit-scrollbar {
-// 				display: none;
-// 			}
-// 		}
-// 	}
-// }
+	@include media-min(md) {
+		margin-top: 0;
+	}
+}
 
 .container {
 	@include container;
-	
-	// display: flex;
-	// position: relative;
-	// width: 100%;
 }
 
 .content {

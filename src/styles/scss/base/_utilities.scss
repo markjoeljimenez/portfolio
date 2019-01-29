@@ -1,0 +1,11 @@
+@import '../reference/index';
+
+.text {
+	&--light {
+		@include font-weight(100);
+	}
+
+	&--heavy {
+		@include font-weight(600);
+	}
+}
