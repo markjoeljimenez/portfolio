@@ -11,7 +11,7 @@ website:
   websiteLink: 'https://markjoeljimenez.github.io/dk-lineup-optimizer/'
   websiteTitle: DK Line-up Optimizer
 featured: true
-style: Light
+style: Dark
 ---
 ## Description
 
