@@ -16,8 +16,8 @@ collections:
       - { name: body, label: Body, widget: markdown }
       - { name: tag, label: Tag, widget: string }
       - { name: path, label: Path }
-  - name: project
-    label: Project
+  - name: projects
+    label: Projects
     folder: src/projects
     create: true
     fields:
@@ -36,3 +36,8 @@ collections:
           - { name: websiteTitle, label: Website Title, widget: string }
           - { name: githubLink, label: Github Link, widget: string }
           - { name: githubTitle, label: Github Title, widget: string }
+      - {label: "Featured", name: "featured", widget: "boolean", default: true}
+      - label: "Style"
+        name: "style"
+        widget: "select"
+        options: ["Default", "Light", "Dark"]
