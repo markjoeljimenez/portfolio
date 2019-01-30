@@ -16,14 +16,14 @@ const IndexPage = () => (
 				<div className="row row--no-margin-top">
 					<div className="column">
 						<h1>Let's skip introductions
-							<br/>and get to <a href="">work</a>.
+							<br/>and get to <Link to={'#work'}>work</Link>.
 						</h1>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div className="panel panel--light panel--has-background">
+		<div className="panel panel--light panel--has-background" id="work">
 			<div className="panel__container">
 				<div className="row">
 					<div className="column column--md-6">

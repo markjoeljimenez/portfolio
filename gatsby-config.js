@@ -7,12 +7,12 @@ module.exports = {
 				name: `Home`
 			},
 			{
-				link: `/projects`,
-				name: `Projects`
+				link: `#work`,
+				name: `Work`
 			},
 			{
-				link: `/blog`,
-				name: `Blog`
+				link: `#insights`,
+				name: `Insights`
 			}
 		]
 	},
