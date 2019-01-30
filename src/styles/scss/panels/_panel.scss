@@ -90,11 +90,14 @@ $block: 'panel';
 	}
 
 	&__heading {
-		@include font-size-48;
-
+		@include font-size-33;
 		@include font-weight(100);
 		
 		margin: 0;
+		
+		@include media-min(xs) {
+			@include font-size-48;
+		}
 		
 		@include media-min(md) {
 			@include font-size-64;

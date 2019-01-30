@@ -17,7 +17,10 @@ $block: 'header';
 
 	&--active {
 		.#{$block}__list {
-			display: block;
+			align-items: center;
+			display: inline-flex;
+			margin-left: 1rem;
+			vertical-align: top;
 		}
 	}
 	
@@ -28,9 +31,16 @@ $block: 'header';
 	&__container {
 		@include container;
 
-		padding: 2rem;
+		display: flex;
+
+		padding: 1rem;
+		
+		@include media-min(xs) {
+			padding: 2rem;
+		}
 
 		@include media-min(md) {
+			display: flex;
 			padding: 1.75rem 1rem;
 		}
 	}
@@ -42,34 +52,41 @@ $block: 'header';
 		border-radius: 0.25rem;
 		box-sizing: border-box;
 		display: none;
-		margin-left: -0.5rem;
-		margin-right: -0.5rem;
+		flex: 1 1 auto;
+		height: 2.5rem;
+		// margin-left: -0.5rem;
+		// margin-right: -0.5rem;
 		// padding: 0.5rem;
 
 		@include media-min(md) {
 			border-radius: 0;
 			display: block;
+			height: auto;
 			margin: 0;
 			padding: 0;
 		}
 	}
 
 	&__item {
-		$spacing: 1.3125rem;
+		$spacing: 1rem;
 
-		padding: calc(#{$spacing} / 2) 0.5rem;
+		// padding: calc(#{$spacing} / 2) 0.5rem;
 		text-transform: uppercase;
 
 		&:last-child {
-			border-bottom: 0;
+			margin-right: $spacing;
 		}
 
+		display: inline-block;
+		margin-left: $spacing;
+		padding: 0;
+
 		@include media-min(md) {
-			display: inline-block;
+			$spacing: 1.3125rem;
+
 			margin-left: $spacing;
 			margin-right: $spacing;
-			padding: 0;
-	
+
 			&:first-child {
 				margin-left: 0;
 			}
@@ -78,6 +95,7 @@ $block: 'header';
 				margin-right: 0;
 			}
 		}
+
 	}
 
 	&__link {
@@ -89,9 +107,10 @@ $block: 'header';
 		border: 0;
 		border-radius: 0.25rem;
 		cursor: pointer;
-		display: block;
+		display: inline-block;
+		// margin-left: -0.5rem;
+		// margin-top: -0.5rem;
 		padding: 0.5rem;
-		transform: translate(-0.5rem, -0.5rem);
 
 		svg {
 			display: block;
@@ -99,6 +118,10 @@ $block: 'header';
 
 		@include media-min(md) {
 			display: none;
+		}
+
+		.#{$block}__heading + & {
+			margin-top: 0.5rem;
 		}
 	}
 }
