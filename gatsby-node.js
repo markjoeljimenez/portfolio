@@ -19,6 +19,7 @@ exports.createPages = ({actions, graphql}) => {
 								publicURL
 							}
 							tag
+							featured
 						}
 						html
 					}
