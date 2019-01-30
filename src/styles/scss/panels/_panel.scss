@@ -21,6 +21,20 @@ $block: 'panel';
 	&--dark {
 		background-color: $primary;
 		color: $white;
+
+		.#{$block}__rte {
+			color: $white;
+		}
+
+		.#{$block}__footer {
+			.#{$block}__link {
+				color: $white;
+			}
+
+			svg {
+				fill: $white;
+			}
+		}
 	}
 
 	&--reverse {
