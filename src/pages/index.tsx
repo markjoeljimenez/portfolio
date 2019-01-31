@@ -85,7 +85,7 @@ const IndexPage = () => (
 											<div className="panel__content column column--md-6">
 												<div className="panel__header">
 													<h2 className="panel__heading">{project.node.childMarkdownRemark.frontmatter.title}</h2>
-													<p className="panel__client">Suncor Energy</p>
+													{/* <p className="panel__client">Suncor Energy</p> */}
 												</div>
 												<p className="panel__short-description" dangerouslySetInnerHTML={{__html: frontmatter.shortDescription}}/>
 												<div className="panel__footer">
