@@ -11,5 +11,6 @@ website:
   websiteTitle: torontopearson.ca
 featured: true
 style: Light
+reverse: false
 ---
 Test
