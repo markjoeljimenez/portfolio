@@ -16,6 +16,7 @@ website:
   websiteTitle: DK Line-up Optimizer
 featured: false
 style: Light
+reverse: true
 ---
 ## Description
 
