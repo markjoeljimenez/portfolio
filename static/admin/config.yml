@@ -23,6 +23,7 @@ collections:
     fields:
       - { name: image, label: Cover Image, widget: image }
       - { name: title, label: Title }
+      - { name: shortDescription, label: Short Description, widget: text }
       - { name: date, label: Date, widget: date }
       - { name: tools, label: Tools, widget: string }
       - { name: body, label: Body, widget: markdown }
