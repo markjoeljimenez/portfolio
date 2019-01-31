@@ -42,3 +42,4 @@ collections:
         name: "style"
         widget: "select"
         options: ["Default", "Light", "Dark"]
+      - {label: "Reverse", name: "reverse", widget: "boolean", default: false}

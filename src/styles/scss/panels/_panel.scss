@@ -49,10 +49,11 @@ $block: 'panel';
 
 		.column {
 			flex-basis: auto;
+			order: 1;
 		}
 
 		.#{$block}__content {
-			order: 1;
+			order: 2;
 
 			@include media-min(md) {
 				order: initial;
@@ -91,6 +92,10 @@ $block: 'panel';
 		&-center {
 			text-align: center;
 		}
+	}
+
+	&__content {
+		order: 1;
 	}
 
 	&__container {
@@ -159,8 +164,14 @@ $block: 'panel';
 		}
 	}
 
-	&__rte {
+	&__rte,
+	&__short-description {
 		color: $primary;
+	}
+
+	&__short-description {
+		line-height: 2;
+		white-space: pre-line;
 	}
 
 	&__footer {

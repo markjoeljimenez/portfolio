@@ -14,12 +14,14 @@ exports.createPages = ({actions, graphql}) => {
 						frontmatter {
 							date
 							title
+							shortDescription
 							path
 							image {
 								publicURL
 							}
 							tag
 							featured
+							reverse
 						}
 						html
 					}
