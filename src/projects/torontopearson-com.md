@@ -1,7 +1,19 @@
 ---
 image: /../images/assets/torontopearson.png
 title: torontopearson.com
-shortDescription: "This was my first project as an intern at Habanero Consulting Group.  I was tasked to develop the prototype of the website using technologies such as HTML (Handlebars), SCSS, and TypeScript.\n\t\t\t\t\t\nI was also able to experiment with Node.js, Webpack, and Gulp to set up a boilerplate."
+shortDescription: >-
+  Near the end of my intership, I was brought on to the website redesign project
+  for torontopearson.com.  Identical to the work I was doing on Suncor, I was
+  also tasked to develop the prototype with HTML (Handlebars), SCSS, and
+  TypeScript.
+
+
+  I also started learning React and Redux to help display Pearson’s large
+  amounts of flight data.
+
+
+  I was also able to work more with a CMS called Sitecore which involves
+  knowledge of the MVC architecture and C#.
 date: 2019-01-31T01:09:25.499Z
 tools: html | css | javascript | sitecore | gulp
 tag: torontopearson
