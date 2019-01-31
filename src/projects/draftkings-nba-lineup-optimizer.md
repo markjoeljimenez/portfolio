@@ -1,7 +1,10 @@
 ---
 image: /../images/assets/stephen-baker-507933-unsplash.jpg
 title: DraftKings NBA Lineup Optimizer
-shortDescription: Test
+shortDescription: |-
+  Test
+  new line
+  test
 date: 2019-01-03T10:07:26.014Z
 tools: html | css | javascript
 tag: dk-lineup-optimizer
