@@ -21,25 +21,34 @@ collections:
     folder: src/projects
     create: true
     fields:
-      - { name: image, label: Cover Image, widget: image }
       - { name: title, label: Title }
-      - { name: shortDescription, label: Short Description, widget: text }
-      - { name: date, label: Date, widget: date }
-      - { name: tools, label: Tools, widget: string }
       - { name: body, label: Body, widget: markdown }
-      - { name: tag, label: Tag, widget: string }
-      - { name: path, label: Path }
-      - name: "website"
-        label: "Website"
+      - label: "Metadata"
+        name: "metadata"
         widget: "object"
         fields:
-          - { name: websiteLink, label: Website Link, widget: string }
-          - { name: websiteTitle, label: Website Title, widget: string }
-          - { name: githubLink, label: Github Link, widget: string }
-          - { name: githubTitle, label: Github Title, widget: string }
-      - {label: "Featured", name: "featured", widget: "boolean", default: true}
-      - label: "Style"
-        name: "style"
-        widget: "select"
-        options: ["Default", "Light", "Dark"]
-      - {label: "Reverse", name: "reverse", widget: "boolean", default: false}
+          - { name: image, label: Cover Image, widget: image }
+          - { name: date, label: Date, widget: date }
+          - { name: path, label: Path, widget: string, default: "/projects/"}
+          - { name: shortDescription, label: Short Description, widget: markdown }
+          - { name: tools, label: Tools, widget: string }
+          - { name: tag, label: Tag, widget: string }
+          - name: "website"
+            label: "Website"
+            widget: "object"
+            fields:
+              - { name: websiteLink, label: Website Link, widget: string }
+              - { name: websiteTitle, label: Website Title, widget: string }
+              - { name: githubLink, label: Github Link, widget: string }
+              - { name: githubTitle, label: Github Title, widget: string }
+          - {label: "Featured", name: "featured", widget: "boolean", default: true}
+      - label: "Styles"
+        name: "styles"
+        widget: "object"
+        fields:
+          - label: "Theme"
+            name: "theme"
+            widget: "select"
+            default: "Default"
+            options: ["Default", "Light", "Dark"]
+          - {label: "Reverse", name: "reverse", widget: "boolean", default: false}
