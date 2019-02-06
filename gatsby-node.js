@@ -22,6 +22,10 @@ exports.createPages = ({actions, graphql}) => {
 							tag
 							featured
 							reverse
+							website {
+								websiteLink
+								websiteTitle
+							}
 						}
 						html
 					}
