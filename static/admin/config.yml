@@ -23,33 +23,25 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
-      - label: "Metadata"
-        name: "metadata"
+      - { name: image, label: Cover Image, widget: image }
+      - { name: date, label: Date, widget: date }
+      - { name: path, label: Path, widget: string, default: "/projects/"}
+      - { name: shortDescription, label: Short Description, widget: markdown, required: false }
+      - { name: tools, label: Tools, widget: string, required: false }
+      - { name: tag, label: Tag, widget: string, required: false }
+      - name: "website"
+        label: "Website"
         widget: "object"
+        required: false
         fields:
-          - { name: image, label: Cover Image, widget: image }
-          - { name: date, label: Date, widget: date }
-          - { name: path, label: Path, widget: string, default: "/projects/"}
-          - { name: shortDescription, label: Short Description, widget: markdown, required: false }
-          - { name: tools, label: Tools, widget: string, required: false }
-          - { name: tag, label: Tag, widget: string, required: false }
-          - name: "website"
-            label: "Website"
-            widget: "object"
-            required: false
-            fields:
-              - { name: websiteLink, label: Website Link, widget: string }
-              - { name: websiteTitle, label: Website Title, widget: string }
-              - { name: githubLink, label: Github Link, widget: string }
-              - { name: githubTitle, label: Github Title, widget: string }
-          - {label: "Featured", name: "featured", widget: "boolean", default: true}
-      - label: "Styles"
-        name: "styles"
-        widget: "object"
-        fields:
-          - label: "Theme"
-            name: "theme"
-            widget: "select"
-            default: "Default"
-            options: ["Default", "Light", "Dark"]
-          - {label: "Reverse", name: "reverse", widget: "boolean", default: false, required: false}
+          - { name: websiteLink, label: Website Link, widget: string }
+          - { name: websiteTitle, label: Website Title, widget: string }
+          - { name: githubLink, label: Github Link, widget: string }
+          - { name: githubTitle, label: Github Title, widget: string }
+      - {label: "Featured", name: "featured", widget: "boolean", default: true}
+      - label: "Theme"
+        name: "theme"
+        widget: "select"
+        default: "Default"
+        options: ["Default", "Light", "Dark"]
+      - {label: "Reverse", name: "reverse", widget: "boolean", default: false, required: false}
