@@ -12,6 +12,7 @@ const IndexPage = () => (
 			) {
 				edges {
 					node {
+						id
 						sourceInstanceName
 						childMarkdownRemark {
 							frontmatter {
@@ -31,7 +32,7 @@ const IndexPage = () => (
 									websiteTitle
 								}
 								featured
-								style
+								theme
 								reverse
 							}
 							html
@@ -42,8 +43,6 @@ const IndexPage = () => (
 			}
 		}`}
 		render={data => {
-			console.log(data.allFile.edges);
-
 			return (
 			<>
 				<Layout>
@@ -69,8 +68,8 @@ const IndexPage = () => (
 						const frontmatter = project.node.childMarkdownRemark.frontmatter;
 
 						const reverse = (frontmatter.reverse ? ' panel--reverse' : '');
-						const isLight = (frontmatter.style === 'Light' ? ' panel--light panel--has-background' : '');
-						const isDark = (frontmatter.style === 'Dark' ? ' panel--dark panel--has-background' : '');
+						const isLight = (frontmatter.theme === 'Light' ? ' panel--light panel--has-background' : '');
+						const isDark = (frontmatter.theme === 'Dark' ? ' panel--dark panel--has-background' : '');
 
 						if (frontmatter.featured) {
 							return (
@@ -176,8 +175,8 @@ const IndexPage = () => (
 						const frontmatter = project.node.childMarkdownRemark.frontmatter;
 
 						const reverse = (frontmatter.reverse ? ' panel--reverse' : '');
-						const isLight = (frontmatter.style === 'Light' ? ' panel--light panel--has-background' : '');
-						const isDark = (frontmatter.style === 'Dark' ? ' panel--dark panel--has-background' : '');
+						const isLight = (frontmatter.theme === 'Light' ? ' panel--light panel--has-background' : '');
+						const isDark = (frontmatter.theme === 'Dark' ? ' panel--dark panel--has-background' : '');
 
 						if (!frontmatter.featured) {
 							return (
