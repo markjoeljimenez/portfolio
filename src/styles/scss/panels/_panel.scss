@@ -114,13 +114,9 @@ $block: 'panel';
 		
 		margin: 0;
 		
-		@include media-min(xs) {
-			@include font-size-48;
-		}
-		
-		@include media-min(md) {
-			@include font-size-64;
-		}
+		// @include media-min(xs) {
+		// 	@include font-size-48;
+		// }
 	}
 	
 	&__subheading {
