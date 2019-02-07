@@ -16,6 +16,8 @@ shortDescription: >-
 
   I was also able to work more with a CMS called Sitecore which involves
   knowledge of the MVC architecture and C#.
+client: GTAA (Greater Toronto Airport Authority)
+workInProgress: true
 featured: true
 theme: Light
 reverse: false
