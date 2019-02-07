@@ -15,6 +15,8 @@ exports.createPages = ({actions, graphql}) => {
 							date
 							title
 							shortDescription
+							client
+							workInProgress
 							path
 							image {
 								publicURL

@@ -29,6 +29,8 @@ collections:
       - { name: shortDescription, label: Short Description, widget: markdown, required: false }
       - { name: tools, label: Tools, widget: string, required: false }
       - { name: tag, label: Tag, widget: string, required: false }
+      - { name: client , label: Client, widget: string, required: false }
+      - { name: workInProgress, label: Work In Progress, widget: boolean, default: false, required: false }
       - name: "website"
         label: "Website"
         widget: "object"

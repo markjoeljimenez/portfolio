@@ -21,6 +21,8 @@ const IndexPage = () => (
 							frontmatter {
 								title
 								shortDescription
+								client
+								workInProgress
 								path
 								image {
 									publicURL
