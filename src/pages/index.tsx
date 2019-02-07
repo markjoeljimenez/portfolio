@@ -1,7 +1,10 @@
-import React from 'react'
-import { Link, StaticQuery, graphql } from 'gatsby'
+import React from 'react';
+import { Link, StaticQuery, graphql } from 'gatsby';
+import remark from 'remark';
+import remarkHtml from 'remark-html';
 
-import Layout from '../layouts/default'
+import Layout from '../layouts/default';
+
 
 const IndexPage = () => (
 	<StaticQuery
@@ -71,6 +74,10 @@ const IndexPage = () => (
 						const isLight = (frontmatter.theme === 'Light' ? ' panel--light panel--has-background' : '');
 						const isDark = (frontmatter.theme === 'Dark' ? ' panel--dark panel--has-background' : '');
 
+						const content = remark()
+							.use(remarkHtml)
+							.processSync(frontmatter.shortDescription).toString();
+
 						if (frontmatter.featured) {
 							return (
 								<div className={`panel${isLight}${isDark}${reverse}`} id="work" key={project.node.id}>
@@ -86,7 +93,7 @@ const IndexPage = () => (
 													<h2 className="panel__heading">{project.node.childMarkdownRemark.frontmatter.title}</h2>
 													{/* <p className="panel__client">Suncor Energy</p> */}
 												</div>
-												<p className="panel__short-description" dangerouslySetInnerHTML={{__html: frontmatter.shortDescription}}/>
+												<p className="panel__short-description" dangerouslySetInnerHTML={{__html: content}}/>
 												{/* <div className="panel__footer">
 													<a href={project.node.childMarkdownRemark.frontmatter.website.websiteLink} className="panel__link panel__link--icon">
 													<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24"><g data-name="Layer 2"><g data-name="globe"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"/><path d="M22 12A10 10 0 0 0 12 2a10 10 0 0 0 0 20 10 10 0 0 0 10-10zm-2.07-1H17a12.91 12.91 0 0 0-2.33-6.54A8 8 0 0 1 19.93 11zM9.08 13H15a11.44 11.44 0 0 1-3 6.61A11 11 0 0 1 9.08 13zm0-2A11.4 11.4 0 0 1 12 4.4a11.19 11.19 0 0 1 3 6.6zm.36-6.57A13.18 13.18 0 0 0 7.07 11h-3a8 8 0 0 1 5.37-6.57zM4.07 13h3a12.86 12.86 0 0 0 2.35 6.56A8 8 0 0 1 4.07 13zm10.55 6.55A13.14 13.14 0 0 0 17 13h2.95a8 8 0 0 1-5.33 6.55z"/></g></g></svg>
