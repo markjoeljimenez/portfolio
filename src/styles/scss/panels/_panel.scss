@@ -141,6 +141,10 @@ $block: 'panel';
 			margin-top: -$border-height / 2;
 			width: 1.5rem;
 		}
+
+		.pill {
+			margin-left: 1rem;
+		}
 	}
 
 	&__list {

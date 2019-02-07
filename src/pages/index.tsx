@@ -93,7 +93,10 @@ const IndexPage = () => (
 											<div className="panel__content column column--md-6">
 												<div className="panel__header">
 													<h2 className="panel__heading">{project.node.childMarkdownRemark.frontmatter.title}</h2>
-													{/* <p className="panel__client">Suncor Energy</p> */}
+													<p className="panel__client">
+														{project.node.childMarkdownRemark.frontmatter.client}
+														{(project.node.childMarkdownRemark.frontmatter.workInProgress ? <span className='pill pill--yellow'>WIP</span> : '')}
+													</p>
 												</div>
 												<p className="panel__short-description" dangerouslySetInnerHTML={{__html: content}}/>
 												{/* <div className="panel__footer">

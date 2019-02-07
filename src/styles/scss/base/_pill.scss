@@ -8,4 +8,10 @@ $block: 'pill';
 	font-size: 12px;
 	padding: 0.25rem 0.75rem;
 	text-transform: uppercase;
+
+	&--yellow {
+		background-color: $yellow;
+		border: 0;
+		color: $white;
+	}
 }
