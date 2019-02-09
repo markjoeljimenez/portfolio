@@ -1,21 +1,22 @@
 ---
-image: /../images/assets/stephen-baker-507933-unsplash.jpg
 title: DraftKings NBA Lineup Optimizer
-shortDescription: |-
-  Test
-  new line
-  test
+image: /../images/assets/stephen-baker-507933-unsplash.jpg
 date: 2019-01-03T10:07:26.014Z
+path: /projects/dk-lineup-optimizer
+shortDescription: >-
+  Alongside learning Javascript and Typescript, I also started learning about
+  algorithms; more specifically, the knapsack problem. Knowing how to solve this
+  particular problem, we could determine what the best roster is to draft in
+  fantasy basketball.
 tools: html | css | javascript
 tag: dk-lineup-optimizer
-path: /projects/dk-lineup-optimizer
 website:
   githubLink: 'https://github.com/markjoeljimenez/dk-lineup-optimizer'
   githubTitle: Github
   websiteLink: 'https://markjoeljimenez.github.io/dk-lineup-optimizer/'
   websiteTitle: DK Line-up Optimizer
 featured: false
-style: Light
+theme: Light
 reverse: true
 ---
 ## Description
