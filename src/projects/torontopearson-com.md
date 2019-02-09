@@ -19,7 +19,7 @@ shortDescription: >-
 client: GTAA (Greater Toronto Airport Authority)
 workInProgress: true
 featured: true
-theme: Light
+theme: Default
 reverse: false
 ---
 test
