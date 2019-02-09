@@ -11,7 +11,7 @@ const IndexPage = () => (
 		query={graphql`
 		query IndexQuery {
 			allFile(
-				filter: { sourceInstanceName: { eq: "projects" }, extension: { ne: "jpg"} }
+				filter: { extension: { eq: "md"} }
 			) {
 				edges {
 					node {
@@ -39,6 +39,7 @@ const IndexPage = () => (
 								featured
 								theme
 								reverse
+								tag
 							}
 							html
 						}
@@ -190,14 +191,14 @@ const IndexPage = () => (
 						const isLight = (frontmatter.theme === 'Light' ? ' panel--light panel--has-background' : '');
 						const isDark = (frontmatter.theme === 'Dark' ? ' panel--dark panel--has-background' : '');
 
-						if (!frontmatter.featured) {
+						if (!frontmatter.featured && project.node.sourceInstanceName === 'projects') {
 							return (
 								<div className={`panel${isLight}${isDark}${reverse}`} id="insights" key={project.node.id}>
 									<div className="panel__container">
 										<div className="row">
 											<div className="panel__content column column--md-7">
 												<div className="panel__header">
-													<h2 className="panel__heading">{project.node.childMarkdownRemark.frontmatter.title}</h2>
+													<h2 className="panel__heading">{frontmatter.title}</h2>
 												</div>
 												<p className="panel__short-description" dangerouslySetInnerHTML={{__html: frontmatter.shortDescription}}/>
 												{/* <div className="panel__footer">
@@ -212,9 +213,17 @@ const IndexPage = () => (
 											</div>
 											<div className="column column--md-4 column--push-md-1">
 												<ul className="panel__list">
-													<li className="panel__item">Switching to Yahoo! Sports</li>
+													{data.allFile.edges.filter((data) => (
+														data.node.sourceInstanceName === 'posts'
+													))
+													.map(post => (
+														<li className="panel__item" key={post.node.id}>
+															<a href='#'>{post.node.childMarkdownRemark.frontmatter.title}</a>
+														</li>
+													))}
+													{/* <li className="panel__item">Switching to Yahoo! Sports</li>
 													<li className="panel__item">Player filtering strategy</li>
-													<li className="panel__item">Initial thoughts</li>
+													<li className="panel__item">Initial thoughts</li> */}
 												</ul>
 											</div>
 										</div>
