@@ -49,11 +49,11 @@ $block: 'panel';
 
 		.column {
 			flex-basis: auto;
-			order: 1;
+			order: 2;
 		}
 
 		.#{$block}__content {
-			order: 2;
+			order: 1;
 
 			@include media-min(md) {
 				order: initial;
