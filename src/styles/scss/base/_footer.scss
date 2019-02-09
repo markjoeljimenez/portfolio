@@ -1,0 +1,40 @@
+@import '../reference/index';
+
+$block: 'footer';
+
+.#{$block} {
+	$spacing-md: 5rem;
+	$spacing: $spacing-md / 3;
+
+	margin-bottom: $spacing;
+	margin-top: $spacing;
+
+	@include media-min(md) {
+		margin-bottom: $spacing-md;
+		margin-top: $spacing-md;
+	}
+
+	&__list {
+		@include clean-list;
+
+		text-align: center;
+	}
+
+	&__item {
+		display: inline-block;
+
+		&:not(:first-child):not(:last-child) {
+			margin-left: 1rem;
+			margin-right: 1rem;
+		}
+	}
+
+	&__icon {
+		height: 1.5rem;
+		width: 1.5rem;
+
+		svg {
+			fill: $primary;
+		}
+	}
+}

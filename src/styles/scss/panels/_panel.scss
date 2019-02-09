@@ -169,6 +169,12 @@ $block: 'panel';
 		color: $primary;
 	}
 
+	&__short-description {
+		&--light {
+			@include font-weight(100);
+		}
+	}
+
 	&__footer {
 		text-align: center;
 		margin-top: 2rem;

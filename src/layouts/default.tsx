@@ -4,10 +4,10 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
 import Header from '../components/header'
-import Container from '../components/container';
+import Footer from '../components/footer';
 import '../styles/scss/style.scss'
 
-const Layout = ({ children, alignment }) => (
+const Layout = ({ children }) => (
 	<StaticQuery
 		query={graphql`
 			query SiteTitleQuery {
@@ -44,9 +44,10 @@ const Layout = ({ children, alignment }) => (
 			<Header title={data.site.siteMetadata.title}
 					menuPages={data.site.siteMetadata.menuPages}
 					logo={data.allFile.edges[0].node}/>
-			<div className="main">
-				{children}
-			</div>
+				<div className="main">
+					{children}
+				</div>
+			<Footer />
 		</>
 		)}
 	/>
