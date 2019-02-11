@@ -8,6 +8,7 @@ $block: 'panel';
 
 	margin-bottom: $spacing;
 	margin-top: $spacing;
+	position: relative;
 
 	@include media-min(md) {
 		margin-bottom: $spacing-md;
@@ -61,7 +62,7 @@ $block: 'panel';
 		}
 	}
 
-	&--has-background {
+	&--has-background-color {
 		margin: 0;
 		padding-bottom: $spacing;
 		padding-top: $spacing;
@@ -81,6 +82,10 @@ $block: 'panel';
 		}
 	}
 
+	&--has-background-image {
+		margin: 0;
+	}
+
 	&--small-spacing {
 		@include media-min(md) {
 			margin-bottom: $spacing;
@@ -92,6 +97,31 @@ $block: 'panel';
 		&-center {
 			text-align: center;
 		}
+	}
+
+	&__background-picture {
+		bottom: 0;
+		display: block;
+		left: 0;
+		overflow: hidden;
+		position: absolute;
+		right: 0;
+		top: -150%;
+
+		&::after {
+			background-color: rgba($primary, 0.70);
+			bottom: 0;
+			content: '';
+			left: 0;
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+	}
+
+	&__background-image {
+		object-position: center center;
+		width: 100%;
 	}
 
 	&__content {

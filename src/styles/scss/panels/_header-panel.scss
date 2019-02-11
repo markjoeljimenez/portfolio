@@ -1,0 +1,31 @@
+@import '../reference/index';
+
+$block: 'header-panel';
+
+.#{$block} {
+	> *:not([class="panel__background-picture"]) {
+		position: relative;
+		z-index: 2;
+	}
+
+	&__content {
+		color: $white;
+		padding-bottom: 3rem;
+		padding-top: 3rem;
+
+		@include media-min(md) {
+			padding-top: 24rem;
+		}
+	}
+
+	.panel__subheading {
+		@include font-size-33;
+		@include font-weight(100);
+		
+		margin: 0;
+		
+		@include media-min(sm) {
+			@include font-size-48;
+		}
+	}
+}

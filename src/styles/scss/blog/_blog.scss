@@ -3,7 +3,14 @@
 $block: 'blog';
 
 .#{$block} {
-	width: 100%;
+	@include container;
+
+	margin-bottom: 5.5rem;
+	margin-top: 5.5rem;
+
+	&__container {
+		max-width: 46rem;
+	}
 
 	&__list {
 		@include clean-list;
@@ -48,8 +55,7 @@ $block: 'blog';
 		justify-content: space-between;
 	}
 
-	&__heading,
-	&__date {
+	&__heading {
 		@include font-size-18;
 
 		@include font-weight(400);
@@ -60,7 +66,7 @@ $block: 'blog';
 	}
 
 	&__date {
-		color: $grey-dark;
+		color: $primary;
 	}
 
 	&__tag {
