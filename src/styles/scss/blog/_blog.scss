@@ -5,11 +5,12 @@ $block: 'blog';
 .#{$block} {
 	@include container;
 
-	margin-bottom: 5.5rem;
-	margin-top: 5.5rem;
+	margin-bottom: 5rem;
+	margin-top: 5rem;
 
-	&__container {
-		max-width: 46rem;
+	@include media-min(md) {
+		margin-bottom: 5.5rem;
+		margin-top: 5.5rem;
 	}
 
 	&__list {
