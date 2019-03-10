@@ -1,0 +1,22 @@
+@import '../reference/index';
+
+$block: 'icon-text';
+
+.#{$block} {
+    &--left {
+        svg {
+            margin-right: 0.5rem;
+        }
+    }
+
+    &--right {
+        svg {
+            margin-left: 0.5rem;
+        }
+    }
+
+    svg {
+        max-width: 1.5rem;
+        vertical-align: text-bottom;
+    }
+}

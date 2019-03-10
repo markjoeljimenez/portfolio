@@ -14,18 +14,40 @@ $block: 'header-panel';
 		padding-top: 3rem;
 
 		@include media-min(md) {
-			padding-top: 24rem;
+			padding-top: 16rem;
+		}
+
+		svg {
+			fill: $white;
 		}
 	}
 
+	.panel__container {
+		@include media-min(md) {
+			padding-bottom: 5.5rem;
+			padding-top: 5.5rem;
+		}
+	}
+
+	.panel__heading {
+		@include font-size-40;
+		@include large-headline;
+	}
+	
 	.panel__subheading {
-		@include font-size-33;
+		@include font-size-18;
+
 		@include font-weight(100);
 		
 		margin: 0;
+		margin-top: 1.5rem;
 		
-		@include media-min(sm) {
-			@include font-size-48;
+		// @include media-min(sm) {
+		// 	@include font-size-48;
+		// }
+
+		& + .panel__subheading {
+			margin-top: 1rem;
 		}
 	}
 }

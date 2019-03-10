@@ -10,11 +10,7 @@ select {
 }
 
 .main {
-	margin-top: calc(8rem / 3 + 3.5rem);
-
-	@include media-min(xs) {
-		margin-top: calc(10rem / 3 + 3.5rem);
-	}
+	margin-top: calc(16rem / 3 + 3.5rem);
 
 	@include media-min(md) {
 		margin-top: 0;
