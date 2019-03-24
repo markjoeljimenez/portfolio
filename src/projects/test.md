@@ -3,6 +3,7 @@ title: Test
 image: /../images/assets/torontopearson.png
 date: 2019-03-24T03:06:30.896Z
 path: /projects/
+client: Test
 workInProgress: false
 featured: true
 theme: Default
