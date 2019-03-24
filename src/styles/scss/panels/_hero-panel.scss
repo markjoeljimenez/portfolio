@@ -3,6 +3,10 @@
 $block: 'hero-panel';
 
 .#{$block} {
+	// & + .panel {
+	// 	margin-top: 5rem;
+	// }
+
 	h1 {
 		@include font-size-48;
 

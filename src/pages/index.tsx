@@ -148,7 +148,7 @@ const IndexPage = () => (
 
 						if (!frontmatter.featured && project.node.sourceInstanceName === 'projects') {
 							return (
-								<div className={`panel${isLight}${isDark}${reverse}`} id="insights" key={project.node.id}>
+								<div className={`insight-panel panel${isLight}${isDark}${reverse}`} id="insights" key={project.node.id}>
 									<div className="panel__container">
 										<div className="row">
 											<div className="panel__content column column--md-7">

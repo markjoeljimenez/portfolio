@@ -1,0 +1,31 @@
+@import '../reference/index';
+
+$block: 'insight-panel';
+
+.#{$block} {
+	&.panel--reverse {
+		.column {
+			&:first-child {
+				order: 1;
+			}
+		}
+	}
+
+	.panel__list {
+		border-top: 1px solid #c4c4c4;
+	
+		@include media-min(md) {
+			border-top: 0;
+		}
+	}
+
+	.panel__item {
+		&:first-child {
+			margin-top: 2rem !important;
+
+			@include media-min(md) {
+				margin-top: 1rem !important;
+			}
+		}
+	}
+}

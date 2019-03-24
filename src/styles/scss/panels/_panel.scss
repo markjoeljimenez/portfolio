@@ -179,6 +179,8 @@ $block: 'panel';
 
 	&__list {
 		@include clean-list;
+
+		text-align: left;
 	}
 
 	&__item {
