@@ -72,7 +72,6 @@ export const postQuery = graphql`
 						frontmatter {
 							date
 							title
-							shortDescription
 							client
 							workInProgress
 							path
