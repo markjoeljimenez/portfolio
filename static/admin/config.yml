@@ -23,7 +23,7 @@ collections:
     fields:
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
-      - { name: image, label: Cover Image, widget: image }
+      - { name: image, label: Cover Image, widget: image, required: false }
       - { name: date, label: Date, widget: date }
       - { name: path, label: Path, widget: string, default: "/projects/"}
       - { name: tools, label: Tools, widget: string, required: false }
