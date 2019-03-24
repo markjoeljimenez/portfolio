@@ -1,5 +1,6 @@
 ---
 title: Fantasy basketball optimizer
+image: /../images/assets/stephen-baker-507933-unsplash.jpg
 date: 2019-01-04T04:59:02.182Z
 path: /projects/fantasy-basketball-optimizer
 workInProgress: true
