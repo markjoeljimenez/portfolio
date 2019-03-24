@@ -5,6 +5,11 @@ date: 2019-03-24T03:06:30.896Z
 path: /projects/
 client: Test
 workInProgress: false
+website:
+  githubLink: test
+  githubTitle: test
+  websiteLink: test
+  websiteTitle: test
 featured: true
 theme: Default
 reverse: false
