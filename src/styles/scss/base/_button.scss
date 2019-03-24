@@ -15,6 +15,7 @@ $block: 'button';
 	text-transform: uppercase;
 
 	@include hover-focus {
+		background-color: $yellow;
 		text-decoration: none;
 	}
 
