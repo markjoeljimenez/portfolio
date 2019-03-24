@@ -22,12 +22,12 @@ $block: 'header-panel';
 		}
 	}
 
-	.panel__container {
-		@include media-min(md) {
-			padding-bottom: 5.5rem;
-			padding-top: 5.5rem;
-		}
-	}
+	// .panel__container {
+	// 	@include media-min(md) {
+	// 		padding-bottom: 5.5rem;
+	// 		padding-top: 5.5rem;
+	// 	}
+	// }
 
 	.panel__heading {
 		@include font-size-40;

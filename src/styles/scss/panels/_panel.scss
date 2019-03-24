@@ -200,9 +200,7 @@ $block: 'panel';
 	}
 
 	&__short-description {
-		&--light {
-			@include font-weight(100);
-		}
+		@include font-weight(100);
 	}
 
 	&__footer {

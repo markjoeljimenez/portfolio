@@ -5,12 +5,12 @@ $block: 'blog';
 .#{$block} {
 	@include container;
 
-	margin-bottom: 5rem;
-	margin-top: 5rem;
+	margin-bottom: 4rem;
+	margin-top: 4rem;
 
 	@include media-min(md) {
-		margin-bottom: 5.5rem;
-		margin-top: 5.5rem;
+		margin-bottom: 2rem;
+		margin-top: 2rem;
 	}
 
 	&__list {
@@ -76,7 +76,6 @@ $block: 'blog';
 		font-style: italic;
 		margin: 0;
 		margin-top: 0.5rem;
-		text-transform: it
 	}
 
 	&__rte {
