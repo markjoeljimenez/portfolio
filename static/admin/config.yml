@@ -35,10 +35,10 @@ collections:
         widget: "object"
         required: false
         fields:
-          - { name: websiteLink, label: Website Link, widget: string }
-          - { name: websiteTitle, label: Website Title, widget: string }
-          - { name: githubLink, label: Github Link, widget: string }
-          - { name: githubTitle, label: Github Title, widget: string }
+          - { name: websiteLink, label: Website Link, widget: string, required: false  }
+          - { name: websiteTitle, label: Website Title, widget: string, required: false  }
+          - { name: githubLink, label: Github Link, widget: string, required: false  }
+          - { name: githubTitle, label: Github Title, widget: string, required: false  }
       - {label: "Featured", name: "featured", widget: "boolean", default: true}
       - label: "Theme"
         name: "theme"
