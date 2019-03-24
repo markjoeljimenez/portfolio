@@ -26,7 +26,6 @@ collections:
       - { name: image, label: Cover Image, widget: image }
       - { name: date, label: Date, widget: date }
       - { name: path, label: Path, widget: string, default: "/projects/"}
-      - { name: shortDescription, label: Short Description, widget: markdown, required: false }
       - { name: tools, label: Tools, widget: string, required: false }
       - { name: tag, label: Tag, widget: string, required: false }
       - { name: client , label: Client, widget: string, required: false }
