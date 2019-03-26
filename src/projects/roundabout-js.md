@@ -6,8 +6,7 @@ tools: Typescript
 tag: roundaboutjs
 workInProgress: true
 website:
-  githubLink: >-
-    https://github.com/markjoeljimenez/roundabout/blob/master/source/scripts/classes/roundabout.ts
+  githubLink: 'https://github.com/markjoeljimenez/roundaboutjs'
   githubTitle: Github
 featured: false
 theme: Light
