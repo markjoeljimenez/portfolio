@@ -9,7 +9,7 @@ website:
   githubLink: 'https://github.com/markjoeljimenez/roundaboutjs'
   githubTitle: Github
 featured: false
-theme: Light
+theme: Default
 reverse: false
 ---
 A carousel library written in Typescript. 
