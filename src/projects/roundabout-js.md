@@ -10,7 +10,7 @@ website:
   githubTitle: Github
 featured: false
 theme: Default
-reverse: false
+reverse: true
 ---
 A carousel library written in Typescript. 
 
