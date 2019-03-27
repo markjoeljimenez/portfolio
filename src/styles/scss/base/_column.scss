@@ -46,4 +46,12 @@ $block: 'column';
 	@include column-classes(md);
 	@include column-classes(lg);
 	@include column-classes(xl);
+
+	&--m-hidden {
+		display: none;
+
+		@include media-min(lg) {
+			display: block;
+		}
+	}
 }

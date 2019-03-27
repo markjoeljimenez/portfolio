@@ -180,13 +180,14 @@ const IndexPage = () => (
 													</div>
 												) : ''}
 											</div>
-											<div className="column column--md-4 column--push-md-1">
+											<div className={`column column--md-4 column--push-md-1
+												${data.allFile.edges.filter((data) => (
+													data.node.sourceInstanceName === 'posts' && data.node.childMarkdownRemark.frontmatter.tag === project.node.childMarkdownRemark.frontmatter.tag
+												)).length <= 0 ? 'column--m-hidden': ''}`}>
 												<ul className="panel__list">
-													{data.allFile.edges.filter((data) => {
-														console.log(data.node);
-														return (
+													{data.allFile.edges.filter((data) => (
 														data.node.sourceInstanceName === 'posts' && data.node.childMarkdownRemark.frontmatter.tag === project.node.childMarkdownRemark.frontmatter.tag
-													)})
+													))
 													.sort((a, b) => {
 														return new Date(b.node.childMarkdownRemark.frontmatter.date) - new Date(a.node.childMarkdownRemark.frontmatter.date);
 													})
