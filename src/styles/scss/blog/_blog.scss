@@ -83,6 +83,19 @@ $block: 'blog';
 
 		line-height: 2;
 
+		a {
+			&:not([class]) {
+				@include font-weight(600);
+
+				box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .35);
+		
+				@include hover-focus {
+					box-shadow: inset 0 -1px 0 $black;
+					text-decoration: none;
+				}
+			}
+		}
+
 		ul {
 			li {
 				p {
