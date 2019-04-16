@@ -3,12 +3,12 @@ title: Fantasy basketball optimizer
 image: /../images/assets/stephen-baker-507933-unsplash.jpg
 date: 2019-01-04T04:59:02.182Z
 path: /projects/fantasy-basketball-optimizer
-tag: dk-lineup-optimizer
+tag: nba-lineup-optimizer
 workInProgress: true
 website:
   githubLink: 'https://github.com/markjoeljimenez/dk-lineup-optimizer'
   githubTitle: Github
-  websiteLink: 'https://markjoeljimenez.github.io/dk-lineup-optimizer/'
+  websiteLink: 'https://markjoeljimenez.github.io/nba-lineup-optimizer/'
   websiteTitle: Live website
 featured: false
 theme: Light
