@@ -1,6 +1,6 @@
 ---
 title: toronto-pearson.ca
-image: /../images/assets/torontopearson.png
+image: ''
 date: 2019-02-17T04:06:30.896Z
 path: /projects/toronto-pearson
 tools: ''
