@@ -2,7 +2,7 @@
 title: Results!
 date: 2019-01-12T21:10:40.033Z
 tag: nba-lineup-optimizer
-path: /posts/dk-lineup-optimizer/01-11-19-results
+path: /posts/nba-lineup-optimizer/01-11-19-results
 ---
 Yeah, we didn't so well... but hey, at least we didn't end up last! Here are the results:
 
