@@ -2,7 +2,7 @@
 title: Initial thoughts
 date: 2019-01-03T10:29:53.266Z
 tag: nba-lineup-optimizer
-path: /posts/dk-lineup-optimizer/01-03-19-initial-thoughts
+path: /posts/nba-lineup-optimizer/01-03-19-initial-thoughts
 ---
 After learning about the knapsack problem and it's solutions, I instantly knew that this could be applied to optimizing my NBA drafts in DraftKings.
 
