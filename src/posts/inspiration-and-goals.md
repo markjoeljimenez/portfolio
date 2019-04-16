@@ -16,4 +16,35 @@ For the GTAA project, we were using a 3rd party library called [Siema](https://g
 
 Since GTAA and Petro-Canada both have the same carousel pattern implementation, I can assume that the next project I'm on is going to have one as well. This is the perfect time to enhance my Javascript knowledge and hopefully use what I built from scratch in a commercial product!
 
-## Research and goals
+## Research
+
+After taking a look at popular carousel libraries, I realize that they have several similarities:
+
+* Use transform and transition on a dynamically created div
+* Bloated features like animations which increased the size greatly
+* Dependencies (jQuery)
+
+The past two projects that I was on didn't need carousels with all of that. Let's create our own and set some features/goals.
+
+## Features and goals
+
+I want this library to have the basics:
+
+* Mobile friendly
+* Media breakpoints and re sizable
+* Looping
+* Number of slides per view
+* Next/previous event listeners
+* Lightweight
+* **Accessible!**
+
+And for some optional features:
+
+* Ghost cards
+* Animations
+
+
+
+This is going to be a great learning experience and hopefully I get to use it in my next project!
+
+Let's get started!
