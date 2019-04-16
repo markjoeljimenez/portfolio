@@ -8,10 +8,10 @@ $block: 'blog';
 	margin-bottom: 4rem;
 	margin-top: 4rem;
 
-	@include media-min(md) {
-		margin-bottom: 2rem;
-		margin-top: 2rem;
-	}
+	// @include media-min(md) {
+	// 	margin-bottom: 2rem;
+	// 	margin-top: 2rem;
+	// }
 
 	&__list {
 		@include clean-list;
@@ -79,6 +79,8 @@ $block: 'blog';
 	}
 
 	&__rte {
+		@include even-spacing(1rem);
+
 		line-height: 2;
 
 		ul {

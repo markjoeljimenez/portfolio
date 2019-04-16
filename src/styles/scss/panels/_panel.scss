@@ -151,6 +151,17 @@ $block: 'panel';
 	
 	&__subheading {
 		@include font-size-24;
+
+		a {
+			@include color-states($white, $white, $white);
+
+			box-shadow: inset 0 -1px 0 rgba($white, .35);
+
+			@include hover-focus {
+				box-shadow: inset 0 -1px 0 $white;
+				text-decoration: none;
+			}
+		}
 	}
 
 	&__client {

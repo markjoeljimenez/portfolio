@@ -87,7 +87,14 @@ const IndexPage = () => (
 											</div>
 											<div className="panel__content column column--md-6">
 												<div className="panel__header">
-													<h2 className="panel__heading">{project.node.childMarkdownRemark.frontmatter.title} {(project.node.childMarkdownRemark.frontmatter.workInProgress ? <span className='pill pill--yellow'>WIP</span> : '')}</h2>
+													<h2 className="panel__heading">
+														{frontmatter.path ? (
+															<Link to={frontmatter.path}>{project.node.childMarkdownRemark.frontmatter.title}</Link>
+														) : (
+															project.node.childMarkdownRemark.frontmatter.title
+														)}
+														{(project.node.childMarkdownRemark.frontmatter.workInProgress ? <span className='pill pill--yellow'>WIP</span> : '')}
+													</h2>
 													<p className="panel__client">
 														{project.node.childMarkdownRemark.frontmatter.client}
 													</p>
@@ -153,7 +160,14 @@ const IndexPage = () => (
 										<div className="row">
 											<div className="panel__content column column--md-7">
 												<div className="panel__header">
-													<h2 className="panel__heading">{frontmatter.title} {(project.node.childMarkdownRemark.frontmatter.workInProgress ? <span className='pill pill--yellow'>WIP</span> : '')}</h2>
+													<h2 className="panel__heading">
+														{frontmatter.path ? (
+															<Link to={frontmatter.path}>{project.node.childMarkdownRemark.frontmatter.title}</Link>
+														) : (
+															project.node.childMarkdownRemark.frontmatter.title
+														)}
+														{(project.node.childMarkdownRemark.frontmatter.workInProgress ? <span className='pill pill--yellow'>WIP</span> : '')}
+													</h2>
 												</div>
 												<div className="panel__short-description" dangerouslySetInnerHTML={{__html: project.node.childMarkdownRemark.excerpt}}/>
 												{website.githubLink || website.websiteLink ? (
