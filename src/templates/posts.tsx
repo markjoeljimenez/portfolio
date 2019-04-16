@@ -14,7 +14,7 @@ export default function Template({ data }) {
 			{(data.allFile.edges.filter(project => project.node.sourceInstanceName === 'projects')
 			.filter(project => project.node.childMarkdownRemark.frontmatter.tag === post.frontmatter.tag)
 			.map(project => (
-				<div className="header-panel panel panel--has-background-image" key={project.node.id}>
+				<div className={`header-panel panel panel--has-background-image ${!post.frontmatter.image ? 'panel--dark' : ''}`} key={project.node.id}>
 					<div className="panel__container">
 						<div className="row">
 							<div className="column">
@@ -28,9 +28,12 @@ export default function Template({ data }) {
 							</div>
 						</div>
 					</div>
-					<picture className="panel__background-picture">
-						<img className="panel__background-image" src={project.node.childMarkdownRemark.frontmatter.image.publicURL} />
-					</picture>
+					
+					{project.node.childMarkdownRemark.frontmatter.image ? (
+						<picture className="panel__background-picture">
+								<img className="panel__background-image" src={project.node.childMarkdownRemark.frontmatter.image.publicURL} />
+						</picture>
+					) : ''}
 				</div>
 			)))}
 			<article className="blog">

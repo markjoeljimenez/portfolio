@@ -80,10 +80,12 @@ const IndexPage = () => (
 								<div className={`panel${isLight}${isDark}${reverse}`} id="work" key={project.node.id}>
 									<div className="panel__container">
 										<div className="row">
-											<div className="column column--md-6">
+										<div className="column column--md-6">
+											{frontmatter.image ? (
 												<picture className="panel__picture">
 													<img className="panel__image" src={frontmatter.image.publicURL} />
 												</picture>
+											) : ''}
 											</div>
 											<div className="panel__content column column--md-6">
 												<div className="panel__header">
