@@ -36,5 +36,18 @@ $block: 'side-navigation';
 				top: 0;
 			}
 		}
+
+		@include hover-focus {
+			color: $black;
+
+			&::before {
+				bottom: 0;
+				border-left: 1px solid rgba($primary, 1);
+				content: '';
+				position: absolute;
+				left: calc(-1.5rem - 1px);
+				top: 0;
+			}
+		}
 	}
 }
