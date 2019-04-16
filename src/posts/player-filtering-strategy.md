@@ -1,8 +1,8 @@
 ---
 title: Player filtering strategy
 date: 2019-01-10T20:20:59.187Z
-tag: dk-lineup-optimizer
-path: /posts/dk-lineup-optimizer/01-10-19-player-filtering-strategy
+tag: nba-lineup-optimizer
+path: /posts/nba-lineup-optimizer/01-10-19-player-filtering-strategy
 ---
 Let's cover some basic rules from DraftKings.
 
