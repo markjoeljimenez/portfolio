@@ -33,11 +33,7 @@ $block: 'header';
 
 		display: flex;
 
-		padding: 1.25rem;
-		
-		@include media-min(xs) {
-			padding: 2rem;
-		}
+		padding: $grid-gutter-width * 2;
 
 		@include media-min(md) {
 			display: flex;
