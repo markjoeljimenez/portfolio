@@ -8,7 +8,7 @@ $grid-columns: 12 !default;
 $grid-column-width: 2rem !default;
 
 // Width of a column gutter.
-$grid-gutter-width: 2rem;
+$grid-gutter-width: 2rem / 2;
 
 // Maximum width of the grid.
 $grid-max-width: 70rem !default;
@@ -21,16 +21,16 @@ $main-padding: 8rem;
 	margin-left: auto;
 	margin-right: auto;
 	max-width: $width;
-	padding-left: $grid-gutter-width / 2;
-	padding-right: $grid-gutter-width / 2;
+	padding-left: $grid-gutter-width;
+	padding-right: $grid-gutter-width;
 }
 
 /// Creates a row, allowing columns to fit within it.
 @mixin row {
 	display: flex;
 	flex-wrap: wrap;
-	margin-left: -$grid-gutter-width / 2;
-	margin-right: -$grid-gutter-width / 2;
+	margin-left: -$grid-gutter-width;
+	margin-right: -$grid-gutter-width;
 }
 
 /// Create a column of a specific size.
@@ -42,8 +42,8 @@ $main-padding: 8rem;
 	// always setting `width: 100%;`. This works because we use `flex` values
 	// later on to override this initial width.
 	min-height: 1px; // Prevent collapsing
-	padding-left: $grid-gutter-width / 2;
-	padding-right: $grid-gutter-width / 2;
+	padding-left: $grid-gutter-width;
+	padding-right: $grid-gutter-width;
 	position: relative;
 
 	@if $size != null {
