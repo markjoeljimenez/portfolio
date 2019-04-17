@@ -13,10 +13,6 @@ $block: 'header-panel';
 		padding-bottom: 3rem;
 		padding-top: 3rem;
 
-		@include media-min(md) {
-			padding-top: 16rem;
-		}
-
 		svg {
 			fill: $white;
 		}

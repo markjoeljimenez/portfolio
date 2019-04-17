@@ -15,7 +15,7 @@ select {
 		padding-top: calc(10rem / 3 + 3.5rem);
 	
 		@include media-min(md) {
-			padding-top: 0;
+			padding-top: 16rem;
 		}
 	}
 }
