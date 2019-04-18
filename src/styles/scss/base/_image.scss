@@ -1,0 +1,15 @@
+@import '../reference/index';
+
+$block: 'gatsby-resp-image';
+
+.#{$block} {
+	&-figure {
+		margin: 0;
+	}
+
+	&-figcaption {
+		border-left: 2px solid $yellow;
+		margin-top: 0.5rem;
+		padding-left: 0.75rem;
+	}
+}
