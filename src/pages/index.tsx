@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
 
 import Layout from '../layouts/default';
+import ProjectPanel from '../components/project-panel';
 
 const IndexPage = () => (
 	<StaticQuery
@@ -64,74 +65,16 @@ const IndexPage = () => (
 						</div>
 					</div>
 
-					{data.allFile.edges.sort((a, b) => {
+					{data.allFile.edges.filter(project => project.node.sourceInstanceName === 'projects' && project.node.childMarkdownRemark.frontmatter.featured)
+					.sort((a, b) => {
 						return new Date(b.node.childMarkdownRemark.frontmatter.date) - new Date(a.node.childMarkdownRemark.frontmatter.date);
 					}).map(project => {
-						const frontmatter = project.node.childMarkdownRemark.frontmatter;
-
-						const reverse = (frontmatter.reverse ? ' panel--reverse' : '');
-						const isLight = (frontmatter.theme === 'Light' ? ' panel--light panel--has-background-color' : '');
-						const isDark = (frontmatter.theme === 'Dark' ? ' panel--dark panel--has-background-color' : '');
-
-						const website = project.node.childMarkdownRemark.frontmatter.website;
-
-						if (frontmatter.featured) {
-							return (
-								<div className={`panel${isLight}${isDark}${reverse}`} id="work" key={project.node.id}>
-									<div className="panel__container">
-										<div className="row">
-										<div className="column column--md-6">
-											{frontmatter.image ? (
-												<picture className="panel__picture">
-													<img className="panel__image" src={frontmatter.image.publicURL} />
-												</picture>
-											) : ''}
-											</div>
-											<div className="panel__content column column--md-6">
-												<div className="panel__header">
-													<h2 className="panel__heading">
-														{frontmatter.path ? (
-															<Link to={frontmatter.path}>{project.node.childMarkdownRemark.frontmatter.title}</Link>
-														) : (
-															project.node.childMarkdownRemark.frontmatter.title
-														)}
-														{(project.node.childMarkdownRemark.frontmatter.workInProgress ? <span className='pill pill--yellow'>WIP</span> : '')}
-													</h2>
-													<p className="panel__client">
-														{project.node.childMarkdownRemark.frontmatter.client}
-													</p>
-												</div>
-												<div className="panel__short-description" dangerouslySetInnerHTML={{__html: project.node.childMarkdownRemark.excerpt}}/>
-												{website.githubLink !== '' || website.websiteLink !== '' ? (
-													<div className="panel__footer">
-														<ul className="panel__list">
-														{website.websiteLink !== '' ? (
-															<li className="panel__item">
-																<a href={website.websiteLink} className="panel__link panel__link--icon">
-																	<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24"><g data-name="Layer 2"><g data-name="globe"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"/><path d="M22 12A10 10 0 0 0 12 2a10 10 0 0 0 0 20 10 10 0 0 0 10-10zm-2.07-1H17a12.91 12.91 0 0 0-2.33-6.54A8 8 0 0 1 19.93 11zM9.08 13H15a11.44 11.44 0 0 1-3 6.61A11 11 0 0 1 9.08 13zm0-2A11.4 11.4 0 0 1 12 4.4a11.19 11.19 0 0 1 3 6.6zm.36-6.57A13.18 13.18 0 0 0 7.07 11h-3a8 8 0 0 1 5.37-6.57zM4.07 13h3a12.86 12.86 0 0 0 2.35 6.56A8 8 0 0 1 4.07 13zm10.55 6.55A13.14 13.14 0 0 0 17 13h2.95a8 8 0 0 1-5.33 6.55z"/></g></g></svg>
-																	{website.websiteTitle}
-																</a>
-															</li>
-														) : ''}
-
-														{website.githubLink !== '' ? (
-															<li className="panel__item">
-																<a href={website.githubLink} className="panel__link panel__link--icon">
-																	<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24"><g data-name="Layer 2"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M12 1A10.89 10.89 0 0 0 1 11.77 10.79 10.79 0 0 0 8.52 22c.55.1.75-.23.75-.52v-1.83c-3.06.65-3.71-1.44-3.71-1.44a2.86 2.86 0 0 0-1.22-1.58c-1-.66.08-.65.08-.65a2.31 2.31 0 0 1 1.68 1.11 2.37 2.37 0 0 0 3.2.89 2.33 2.33 0 0 1 .7-1.44c-2.44-.27-5-1.19-5-5.32a4.15 4.15 0 0 1 1.11-2.91 3.78 3.78 0 0 1 .11-2.84s.93-.29 3 1.1a10.68 10.68 0 0 1 5.5 0c2.1-1.39 3-1.1 3-1.1a3.78 3.78 0 0 1 .11 2.84A4.15 4.15 0 0 1 19 11.2c0 4.14-2.58 5.05-5 5.32a2.5 2.5 0 0 1 .75 2v2.95c0 .35.2.63.75.52A10.8 10.8 0 0 0 23 11.77 10.89 10.89 0 0 0 12 1" data-name="github"></path></g></svg>
-																	{website.githubTitle}
-																</a>
-															</li>
-														) : ''}
-														</ul>
-													</div>
-												) : ''}
-											</div>
-										</div>
-									</div>
-								</div>)
-						} else {
-							return
-						}
+						return (
+							<ProjectPanel 
+								frontmatter={project.node.childMarkdownRemark.frontmatter}
+								excerpt={project.node.childMarkdownRemark.excerpt}
+							/>
+						)
 					})}
 
 					<div className="hightlight-panel panel panel--dark panel--has-background-color panel--small-spacing panel--text-align-center">
@@ -146,80 +89,19 @@ const IndexPage = () => (
 						</div>
 					</div>
 
-					{data.allFile.edges.map(project => {
-						const frontmatter = project.node.childMarkdownRemark.frontmatter;
-
-						const reverse = (frontmatter.reverse ? ' panel--reverse' : '');
-						const isLight = (frontmatter.theme === 'Light' ? ' panel--light panel--has-background-color' : '');
-						const isDark = (frontmatter.theme === 'Dark' ? ' panel--dark panel--has-background-color' : '');
-
-						const website = project.node.childMarkdownRemark.frontmatter.website;
-
-						if (!frontmatter.featured && project.node.sourceInstanceName === 'projects') {
-							return (
-								<div className={`insight-panel panel${isLight}${isDark}${reverse}`} id="insights" key={project.node.id}>
-									<div className="panel__container">
-										<div className="row">
-											<div className="panel__content column column--md-7">
-												<div className="panel__header">
-													<h2 className="panel__heading">
-														{frontmatter.path ? (
-															<Link to={frontmatter.path}>{project.node.childMarkdownRemark.frontmatter.title}</Link>
-														) : (
-															project.node.childMarkdownRemark.frontmatter.title
-														)}
-														{(project.node.childMarkdownRemark.frontmatter.workInProgress ? <span className='pill pill--yellow'>WIP</span> : '')}
-													</h2>
-												</div>
-												<div className="panel__short-description" dangerouslySetInnerHTML={{__html: project.node.childMarkdownRemark.excerpt}}/>
-												{website.githubLink || website.websiteLink ? (
-													<div className="panel__footer">
-														<ul className="panel__list">
-														{website.websiteLink ? (
-															<li className="panel__item">
-																<a href={website.websiteLink} className="panel__link panel__link--icon">
-																	<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24"><g data-name="Layer 2"><g data-name="globe"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"/><path d="M22 12A10 10 0 0 0 12 2a10 10 0 0 0 0 20 10 10 0 0 0 10-10zm-2.07-1H17a12.91 12.91 0 0 0-2.33-6.54A8 8 0 0 1 19.93 11zM9.08 13H15a11.44 11.44 0 0 1-3 6.61A11 11 0 0 1 9.08 13zm0-2A11.4 11.4 0 0 1 12 4.4a11.19 11.19 0 0 1 3 6.6zm.36-6.57A13.18 13.18 0 0 0 7.07 11h-3a8 8 0 0 1 5.37-6.57zM4.07 13h3a12.86 12.86 0 0 0 2.35 6.56A8 8 0 0 1 4.07 13zm10.55 6.55A13.14 13.14 0 0 0 17 13h2.95a8 8 0 0 1-5.33 6.55z"/></g></g></svg>
-																	{website.websiteTitle}
-																</a>
-															</li>
-														) : ''}
-
-														{website.githubLink ? (
-															<li className="panel__item">
-																<a href={website.githubLink} className="panel__link panel__link--icon">
-																	<svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24"><g data-name="Layer 2"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M12 1A10.89 10.89 0 0 0 1 11.77 10.79 10.79 0 0 0 8.52 22c.55.1.75-.23.75-.52v-1.83c-3.06.65-3.71-1.44-3.71-1.44a2.86 2.86 0 0 0-1.22-1.58c-1-.66.08-.65.08-.65a2.31 2.31 0 0 1 1.68 1.11 2.37 2.37 0 0 0 3.2.89 2.33 2.33 0 0 1 .7-1.44c-2.44-.27-5-1.19-5-5.32a4.15 4.15 0 0 1 1.11-2.91 3.78 3.78 0 0 1 .11-2.84s.93-.29 3 1.1a10.68 10.68 0 0 1 5.5 0c2.1-1.39 3-1.1 3-1.1a3.78 3.78 0 0 1 .11 2.84A4.15 4.15 0 0 1 19 11.2c0 4.14-2.58 5.05-5 5.32a2.5 2.5 0 0 1 .75 2v2.95c0 .35.2.63.75.52A10.8 10.8 0 0 0 23 11.77 10.89 10.89 0 0 0 12 1" data-name="github"></path></g></svg>
-																	{website.githubTitle}
-																</a>
-															</li>
-														) : ''}
-														</ul>
-													</div>
-												) : ''}
-											</div>
-											<div className={`column column--md-3 column--md-push-1
-												${data.allFile.edges.filter((data) => (
-													data.node.sourceInstanceName === 'posts' && data.node.childMarkdownRemark.frontmatter.tag === project.node.childMarkdownRemark.frontmatter.tag
-												)).length <= 0 ? 'column--m-hidden': ''}`}>
-												<ul className="panel__list">
-													{data.allFile.edges.filter((data) => (
-														data.node.sourceInstanceName === 'posts' && data.node.childMarkdownRemark.frontmatter.tag === project.node.childMarkdownRemark.frontmatter.tag
-													))
-													.sort((a, b) => {
-														return new Date(b.node.childMarkdownRemark.frontmatter.date) - new Date(a.node.childMarkdownRemark.frontmatter.date);
-													})
-													.map(post => (
-														<li className="panel__item" key={post.node.id}>
-															<Link to={post.node.childMarkdownRemark.frontmatter.path}>{post.node.childMarkdownRemark.frontmatter.title}</Link>
-														</li>
-													))}
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>)
-						} else {
-							return
-						}
+					{data.allFile.edges.filter(project => project.node.sourceInstanceName === 'projects' && !project.node.childMarkdownRemark.frontmatter.featured)
+					.sort((a, b) => {
+						return new Date(b.node.childMarkdownRemark.frontmatter.date) - new Date(a.node.childMarkdownRemark.frontmatter.date);
+					}).map(project => {
+						return (
+							<ProjectPanel 
+								frontmatter={project.node.childMarkdownRemark.frontmatter}
+								excerpt={project.node.childMarkdownRemark.excerpt}
+								blogPosts={
+									data.allFile.edges.filter(post => post.node.sourceInstanceName === 'posts' && project.node.childMarkdownRemark.frontmatter.tag === post.node.childMarkdownRemark.frontmatter.tag)
+								}
+							/>
+						)
 					})}
 				</Layout>
 			</>
