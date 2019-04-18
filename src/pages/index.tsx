@@ -196,7 +196,7 @@ const IndexPage = () => (
 													</div>
 												) : ''}
 											</div>
-											<div className={`column column--md-4 column--push-md-1
+											<div className={`column column--md-3 column--md-push-1
 												${data.allFile.edges.filter((data) => (
 													data.node.sourceInstanceName === 'posts' && data.node.childMarkdownRemark.frontmatter.tag === project.node.childMarkdownRemark.frontmatter.tag
 												)).length <= 0 ? 'column--m-hidden': ''}`}>
