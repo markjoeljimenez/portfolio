@@ -98,7 +98,6 @@ export default function Template({ data }) {
 										</li>
 										{blogPosts.filter(blogPost => blogPost.node.childMarkdownRemark.frontmatter.tag === post.frontmatter.tag)
 										.sort((a, b) => {
-											console.log(b.node.childMarkdownRemark.frontmatter.date, a.node.childMarkdownRemark.frontmatter.date)
 											return new Date(b.node.childMarkdownRemark.frontmatter.date) - new Date(a.node.childMarkdownRemark.frontmatter.date);
 										})
 										.map(blogPost => (

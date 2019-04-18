@@ -49,10 +49,9 @@ export default function Template({ data }) {
 										<li className="side-navigation__item side-navigation__item--heading">
 											<h2 className="side-navigation__heading">Blog posts</h2>
 										</li>
-										{data.allFile.edges.filter(project => project.node.sourceInstanceName === 'posts')
-										.filter(blogPost => blogPost.node.childMarkdownRemark.frontmatter.tag === post.frontmatter.tag)
+										{data.allFile.edges
+										.filter(project => project.node.sourceInstanceName === 'posts' && project.node.childMarkdownRemark.frontmatter.tag === post.frontmatter.tag)
 										.sort((a, b) => {
-											console.log(b.node.childMarkdownRemark.frontmatter.date, a.node.childMarkdownRemark.frontmatter.date)
 											return new Date(b.node.childMarkdownRemark.frontmatter.date) - new Date(a.node.childMarkdownRemark.frontmatter.date);
 										})
 										.map(blogPost => (
