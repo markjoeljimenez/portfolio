@@ -20,7 +20,7 @@ export default class ProjectPanel extends React.Component<IProjectPanelProps> {
 		const isDark = (this.props.frontmatter.theme === 'Dark' ? ' panel--dark panel--has-background-color' : '');
 
 		return (
-			<div className={`panel${isLight}${isDark}${reverse}${!this.props.frontmatter.featured ? ' insight-panel' : ''}`}>
+			<section className={`panel${isLight}${isDark}${reverse}${!this.props.frontmatter.featured ? ' insight-panel' : ''}`}>
 				<div className="panel__container">
 					<div className="row">
 						{this.props.frontmatter.image && this.props.frontmatter.featured ? (
@@ -86,7 +86,7 @@ export default class ProjectPanel extends React.Component<IProjectPanelProps> {
 						) : ''}
 					</div>
 				</div>
-			</div>
+			</section>
 		)
 	}
 }

@@ -65,17 +65,19 @@ const IndexPage = () => (
 						</div>
 					</div>
 
-					{data.allFile.edges.filter(project => project.node.sourceInstanceName === 'projects' && project.node.childMarkdownRemark.frontmatter.featured)
-					.sort((a, b) => {
-						return new Date(b.node.childMarkdownRemark.frontmatter.date) - new Date(a.node.childMarkdownRemark.frontmatter.date);
-					}).map(project => {
-						return (
-							<ProjectPanel 
-								frontmatter={project.node.childMarkdownRemark.frontmatter}
-								excerpt={project.node.childMarkdownRemark.excerpt}
-							/>
-						)
-					})}
+					<section id="work">
+						{data.allFile.edges.filter(project => project.node.sourceInstanceName === 'projects' && project.node.childMarkdownRemark.frontmatter.featured)
+						.sort((a, b) => {
+							return new Date(b.node.childMarkdownRemark.frontmatter.date) - new Date(a.node.childMarkdownRemark.frontmatter.date);
+						}).map(project => {
+							return (
+								<ProjectPanel 
+									frontmatter={project.node.childMarkdownRemark.frontmatter}
+									excerpt={project.node.childMarkdownRemark.excerpt}
+								/>
+							)
+						})}
+					</section>
 
 					<div className="hightlight-panel panel panel--dark panel--has-background-color panel--small-spacing panel--text-align-center">
 						<div className="panel__container">
@@ -89,20 +91,22 @@ const IndexPage = () => (
 						</div>
 					</div>
 
-					{data.allFile.edges.filter(project => project.node.sourceInstanceName === 'projects' && !project.node.childMarkdownRemark.frontmatter.featured)
-					.sort((a, b) => {
-						return new Date(b.node.childMarkdownRemark.frontmatter.date) - new Date(a.node.childMarkdownRemark.frontmatter.date);
-					}).map(project => {
-						return (
-							<ProjectPanel 
-								frontmatter={project.node.childMarkdownRemark.frontmatter}
-								excerpt={project.node.childMarkdownRemark.excerpt}
-								blogPosts={
-									data.allFile.edges.filter(post => post.node.sourceInstanceName === 'posts' && project.node.childMarkdownRemark.frontmatter.tag === post.node.childMarkdownRemark.frontmatter.tag)
-								}
-							/>
-						)
-					})}
+					<section id="projects">
+						{data.allFile.edges.filter(project => project.node.sourceInstanceName === 'projects' && !project.node.childMarkdownRemark.frontmatter.featured)
+						.sort((a, b) => {
+							return new Date(b.node.childMarkdownRemark.frontmatter.date) - new Date(a.node.childMarkdownRemark.frontmatter.date);
+						}).map(project => {
+							return (
+								<ProjectPanel
+									frontmatter={project.node.childMarkdownRemark.frontmatter}
+									excerpt={project.node.childMarkdownRemark.excerpt}
+									blogPosts={
+										data.allFile.edges.filter(post => post.node.sourceInstanceName === 'posts' && project.node.childMarkdownRemark.frontmatter.tag === post.node.childMarkdownRemark.frontmatter.tag)
+									}
+								/>
+							)
+						})}
+					</section>
 				</Layout>
 			</>
 		)}}
