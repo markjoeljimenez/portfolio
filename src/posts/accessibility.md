@@ -10,7 +10,7 @@ I can't say for other carousel libraries, but the current one that I'm using doe
 
 However, it seems that Google was able to solve this problem using an overflow: scroll element.
 
-![](/../images/assets/1280x700.png)
+![](/../images/assets/1280x700.png "This is a caption")
 
 I think Google's overflow: scroll approach is a lot easier to implement than using CSS transitions. We can use [Element.scrollTo()](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTo) to move in between slides and implement smooth transitions as well.
 
