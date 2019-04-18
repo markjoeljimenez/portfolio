@@ -3,8 +3,8 @@
 $block: 'panel';
 
 .#{$block} {
-	$spacing-md: 10rem;
-	$spacing: $spacing-md / 3;
+	$spacing-md: 7rem;
+	$spacing: $spacing-md / 2;
 
 	margin-bottom: $spacing;
 	margin-top: $spacing;
