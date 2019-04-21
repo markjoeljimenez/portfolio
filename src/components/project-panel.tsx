@@ -11,7 +11,6 @@ interface IProjectPanelProps {
 export default class ProjectPanel extends React.Component<IProjectPanelProps> {
 	constructor(props) {
 		super(props);
-		console.log(props);
 	}
 
 	render() {
@@ -40,9 +39,11 @@ export default class ProjectPanel extends React.Component<IProjectPanelProps> {
 									)}
 									{this.props.frontmatter.workInProgress ? <span className='pill pill--yellow'>WIP</span> : ''}
 								</h2>
-								<p className="panel__client">
-									{this.props.frontmatter.client || null}
-								</p>
+								{this.props.frontmatter.client ? (
+									<p className="panel__client">
+										{this.props.frontmatter.client}
+									</p>
+								) : ''}
 							</div>
 							<div className="panel__short-description" dangerouslySetInnerHTML={{__html: this.props.excerpt}}/>
 							{this.props.frontmatter.website ? (

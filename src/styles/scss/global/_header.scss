@@ -16,43 +16,82 @@ $block: 'header';
 	z-index: 999;
 
 	&--active {
-		.#{$block}__list {
-			align-items: center;
-			display: inline-flex;
-			margin-left: 1rem;
-			vertical-align: top;
+		.#{$block}__scroll {
+			opacity: 1;
+			transform: translate3d(0, 0, 0);
 		}
 	}
 	
 	@include media-min(md) {
 		background-color: $white;
 	}
-
+	
 	&__container {
 		@include container;
-
+		
 		display: flex;
-
-		padding: $grid-gutter-width * 2;
-
+		margin: $grid-gutter-width * 2;
+		overflow: hidden;
+		padding: 0;
+		
 		@include media-min(md) {
 			display: flex;
+			margin: 0 auto;
+			overflow: none;
 			padding: 1.75rem 1rem;
 		}
 	}
-
-	&__list {
-		@include clean-list;
-
+	
+	&__scroll {
 		background-color: $white;
 		border-radius: 0.25rem;
+		opacity: 0;
+		overflow: scroll;
+		position: relative;
+		transition: all 350ms ease-in-out;
+		transform: translate3d(calc(-100% - 1rem), 0, 0);
+	
+		&::-webkit-scrollbar {
+			display: none;
+		}
+	
+		&::after {
+			background: linear-gradient(to left, rgba($white, 1), rgba($white, 0));
+			bottom: 0;
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 1rem;
+
+			@include media-min(md) {
+				display: none;
+			}
+		}
+	
+		@include media-min(md) {
+			opacity: 1;
+			overflow: auto;
+			transform: translate3d(0, 0, 0);
+		}
+	}
+	
+	&__list {
+		@include clean-list;
+		
+		align-items: center;
 		box-sizing: border-box;
-		display: none;
+		display: flex;
 		flex: 1 1 auto;
 		height: 2.5rem;
-		// margin-left: -0.5rem;
-		// margin-right: -0.5rem;
-		// padding: 0.5rem;
+		overflow: scroll;
+		position: relative;
+		vertical-align: top;
+		z-index: 0;
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
 
 		@include media-min(md) {
 			border-radius: 0;
@@ -65,33 +104,37 @@ $block: 'header';
 
 	&__item {
 		$spacing: 1rem;
-
-		// padding: calc(#{$spacing} / 2) 0.5rem;
-		text-transform: uppercase;
-
-		&:last-child {
-			margin-right: $spacing;
-		}
+		$spacing-md: 2.625rem;
 
 		display: inline-block;
-		margin-left: $spacing;
+		text-transform: uppercase;
 		padding: 0;
 
-		@include media-min(md) {
-			$spacing: 1.3125rem;
-
-			margin-left: $spacing;
-			margin-right: $spacing;
-
-			&:first-child {
-				margin-left: 0;
-			}
-	
-			&:last-child {
-				margin-right: 0;
+		&:first-child {
+			@include media-min(md) {
+				.#{$block}__link {
+					margin-left: 0;
+				}
 			}
 		}
 
+		&:last-child {
+			.#{$block}__link {
+				margin-right: $spacing;
+
+				@include media-min(md) {
+					margin-left: $spacing-md;
+				}
+			}
+		}
+
+		.#{$block}__link {
+			margin-left: $spacing;
+
+			@include media-min(md) {
+				margin-left: $spacing-md;
+			}
+		}
 	}
 
 	&__link {
@@ -99,14 +142,16 @@ $block: 'header';
 	}
 
 	&__button {
+		box-sizing: border-box;
 		background-color: $white;
 		border: 0;
 		border-radius: 0.25rem;
 		cursor: pointer;
 		display: inline-block;
-		// margin-left: -0.5rem;
-		// margin-top: -0.5rem;
+		margin-right: 1rem;
 		padding: 0.5rem;
+		position: relative;
+		z-index: 2;
 
 		svg {
 			display: block;

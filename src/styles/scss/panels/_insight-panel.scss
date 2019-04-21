@@ -11,6 +11,12 @@ $block: 'insight-panel';
 		}
 	}
 
+	.panel__content {
+		.panel__list {
+			border-top: 0;
+		}
+	}
+
 	.panel__list {
 		border-top: 1px solid #c4c4c4;
 	
