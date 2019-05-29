@@ -10,7 +10,7 @@ workInProgress: false
 website:
   githubLink: ''
   githubTitle: ''
-  websiteLink: ''
+  websiteLink: 'https://www.torontopearson.com/en'
   websiteTitle: ''
 featured: true
 theme: Light
