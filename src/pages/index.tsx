@@ -71,7 +71,7 @@ const IndexPage = () => (
 							return new Date(b.node.childMarkdownRemark.frontmatter.date) - new Date(a.node.childMarkdownRemark.frontmatter.date);
 						}).map(project => {
 							return (
-								<ProjectPanel 
+								<ProjectPanel
 									frontmatter={project.node.childMarkdownRemark.frontmatter}
 									excerpt={project.node.childMarkdownRemark.excerpt}
 								/>
