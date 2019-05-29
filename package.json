@@ -29,10 +29,10 @@
   ],
   "license": "MIT",
   "scripts": {
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "format": "prettier --write '**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npm run clean & npm run develop",
+    "clean": "gatsby clean",
+    "develop": "gatsby develop",
+    "build": "gatsby build"
   },
   "devDependencies": {
     "date-fns": "^1.30.1",
