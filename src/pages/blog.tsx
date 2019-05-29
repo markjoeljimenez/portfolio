@@ -9,8 +9,8 @@ const BlogPage = () => (
 	<StaticQuery
 		query={graphql`
 		query BlogPageQuery {
-			allFile(
-				filter: { sourceInstanceName: { eq: "posts" }, extension: { ne: "jpg"} }
+			allFile (
+				filter: { sourceInstanceName: { eq: "posts" }, extension: { eq: "md"} }
 			) {
 				edges {
 					node {
