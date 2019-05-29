@@ -9,7 +9,7 @@ website:
   githubTitle: Github
   websiteLink: 'http://gerihealthhomecare.ca/en/'
 featured: true
-theme: Dark
+theme: Light
 reverse: false
 ---
 A simple static website built with HTML, CSS, JavasScript, PHP, and built on Wordpress.
