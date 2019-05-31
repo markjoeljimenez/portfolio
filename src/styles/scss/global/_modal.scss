@@ -1,0 +1,33 @@
+@import '../reference/index';
+
+$block: 'modal';
+
+.#{$block} {
+	display: none;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 999;
+
+	&--active {
+		align-items: center;
+		background-color: rgba($black, 0.7);
+		display: flex;
+		justify-content: center;
+	}
+
+	&__content {
+		background-color: $white;
+		border-radius: 4px;
+		padding: 1.5rem;
+		position: relative;
+	}
+
+	&__close-button {
+		position: absolute;
+		right: 1rem;
+		top: 1rem;
+	}
+}

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, StaticQuery, graphql } from 'gatsby';
 
 import Layout from '../layouts/default';
-import ProjectPanel from '../components/project-panel';
+import ProjectPanel from '../components/panels/project-panel';
+import ContactPanel from '../components/panels/contact-panel';
 
-const IndexPage = () => (
+
+export default () => (
 	<StaticQuery
 		query={graphql`
 		query IndexQuery {
@@ -49,8 +51,7 @@ const IndexPage = () => (
 				}
 			}
 		}`}
-		render={data => {
-			return (
+		render={data => (
 			<>
 				<Layout>
 					<div className="hero-panel panel">
@@ -69,9 +70,10 @@ const IndexPage = () => (
 						{data.allFile.edges.filter(project => project.node.sourceInstanceName === 'projects' && project.node.childMarkdownRemark.frontmatter.featured)
 						.sort((a, b) => {
 							return new Date(b.node.childMarkdownRemark.frontmatter.date) - new Date(a.node.childMarkdownRemark.frontmatter.date);
-						}).map(project => {
+						}).map((project, i) => {
 							return (
 								<ProjectPanel
+									key={i}
 									frontmatter={project.node.childMarkdownRemark.frontmatter}
 									excerpt={project.node.childMarkdownRemark.excerpt}
 								/>
@@ -79,25 +81,16 @@ const IndexPage = () => (
 						})}
 					</section>
 
-					<div className="hightlight-panel panel panel--dark panel--has-background-color panel--small-spacing panel--text-align-center">
-						<div className="panel__container">
-							<div className="row">
-								<div className="column">
-									<h2 className="panel__heading"><strong>Interested in working together?</strong></h2>
-									<p className="panel__subheading panel__subheading--large text text--light">Send me a message and let's get started!</p>
-									<a className="highlight-panel__button button">Contact me</a>
-								</div>
-							</div>
-						</div>
-					</div>
+					<ContactPanel />
 
 					<section id="projects">
 						{data.allFile.edges.filter(project => project.node.sourceInstanceName === 'projects' && !project.node.childMarkdownRemark.frontmatter.featured)
 						.sort((a, b) => {
 							return new Date(b.node.childMarkdownRemark.frontmatter.date) - new Date(a.node.childMarkdownRemark.frontmatter.date);
-						}).map(project => {
+						}).map((project, i) => {
 							return (
 								<ProjectPanel
+									key={i}
 									frontmatter={project.node.childMarkdownRemark.frontmatter}
 									excerpt={project.node.childMarkdownRemark.excerpt}
 									blogPosts={
@@ -109,8 +102,6 @@ const IndexPage = () => (
 					</section>
 				</Layout>
 			</>
-		)}}
+		)}
 	/>
 )
-
-export default IndexPage

@@ -1,5 +1,5 @@
 import React from 'react';
-import { INetlifyProjectFrontmatter } from '../types/INetlify';
+import { INetlifyProjectFrontmatter } from '../../types/INetlify';
 import { Link } from '@reach/router';
 
 interface IProjectPanelProps {

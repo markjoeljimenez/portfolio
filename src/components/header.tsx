@@ -53,7 +53,7 @@ export default class Header extends React.Component<IHeader> {
 						<ul className="header__list">
 							{this.props.menuPages.map(page => (
 								<li className="header__item" key={page.name}>
-									<Link to={page.link} activeClassName="header__link--active" className="header__link">{page.name}</Link>
+									<a href={page.link} className="header__link">{page.name}</a>
 								</li>
 							))}
 						</ul>
