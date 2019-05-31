@@ -19,9 +19,14 @@ $block: 'button';
 		text-decoration: none;
 	}
 
+	&--dark {
+		background-color: $primary;
+		color: $white;
+	}
+
 	&--icon {
 		@include image-replacement;
-		
+
 		background-color: $white;
 		border-radius: 2.5rem;
 		box-shadow: 0 0 1.5rem .25rem rgba(#ccc, 1);

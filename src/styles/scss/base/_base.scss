@@ -3,7 +3,9 @@
 html,
 body,
 button,
-select {
+input,
+select,
+textarea {
 	@include font-family-primary;
 
 	margin: 0;
@@ -18,18 +20,6 @@ select {
 			padding-top: 9rem;
 		}
 	}
-}
-
-.container {
-	@include container;
-}
-
-.content {
-	position: relative;
-}
-
-.u-hidden {
-	@include hidden;
 }
 
 * {
@@ -63,6 +53,26 @@ p {
 	}
 }
 
+
+//
+// Global elements
+//
+.container {
+	@include container;
+}
+
+.content {
+	position: relative;
+}
+
+
+//
+// Utilities
+//
 .overflow-hidden {
 	overflow: hidden;
+}
+
+.u-hidden {
+	@include hidden;
 }

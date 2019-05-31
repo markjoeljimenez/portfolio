@@ -6,6 +6,8 @@ $block: 'modal';
 	display: none;
 	height: 100%;
 	left: 0;
+	padding-left: 1rem;
+	padding-right: 1rem;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -22,7 +24,14 @@ $block: 'modal';
 		background-color: $white;
 		border-radius: 4px;
 		padding: 1.5rem;
+		padding-top: 4.5rem;
 		position: relative;
+		width: 100%;
+
+		@include media-min(md) {
+			min-width: 30rem;
+			width: auto;
+		}
 	}
 
 	&__close-button {

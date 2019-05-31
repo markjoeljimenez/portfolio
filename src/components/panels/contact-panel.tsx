@@ -19,20 +19,22 @@ export default class ContactPanel extends React.Component<{}, IContactPanelState
 		}
 	}
 
-	public toggleModalVisibility() {
+	private toggleModalVisibility() {
 		this.setState({
 			hidden: !this.state.hidden
-		}, () => {
-			const body = this.modalRef.current.closest('html');
+		}, this.togglePageOverflow)
+	}
 
-			if (body instanceof HTMLElement) {
-				if (!this.state.hidden) {
-					body.classList.add('overflow-hidden');
-				} else {
-					body.classList.remove('overflow-hidden');
-				}
+	private togglePageOverflow() {
+		const body = this.modalRef.current.closest('html');
+
+		if (body instanceof HTMLElement) {
+			if (!this.state.hidden) {
+				body.classList.add('overflow-hidden');
+			} else {
+				body.classList.remove('overflow-hidden');
 			}
-		});
+		}
 	}
 
 	public render() {
@@ -49,7 +51,11 @@ export default class ContactPanel extends React.Component<{}, IContactPanelState
 						</div>
 					</div>
 				</div>
-				<Modal hidden={this.state.hidden} toggleModalVisibility={this.toggleModalVisibility.bind(this)} modalRef={this.modalRef}>
+
+				<Modal
+					hidden={this.state.hidden}
+					toggleModalVisibility={this.toggleModalVisibility.bind(this)}
+					modalRef={this.modalRef}>
 					<Form />
 				</Modal>
 			</>

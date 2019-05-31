@@ -7,25 +7,22 @@ export default class Form extends React.Component {
 
 	public render() {
 		return (
-			<form name="contact" method="POST" data-netlify="true">
-				<p>
-					<label>Your Name: <input type="text" name="name" /></label>
-				</p>
-				<p>
-					<label>Your Email: <input type="email" name="email" /></label>
-				</p>
-				<p>
-					<label>Your Role: <select name="role[]" multiple>
-					<option value="leader">Leader</option>
-					<option value="follower">Follower</option>
-					</select></label>
-				</p>
-				<p>
-					<label>Message: <textarea name="message"></textarea></label>
-				</p>
-				<p>
-					<button type="submit">Send</button>
-				</p>
+			<form className="form" name="contact" method="POST" data-netlify="true">
+				<div className="form__group">
+					<label className="u-hidden">Your Name</label>
+					<input className="form__input input" type="text" name="name" placeholder="Your name" required/>
+				</div>
+				<div className="form__group">
+					<label className="u-hidden">Your Email</label>
+					<input className="form__input input" type="email" name="email" placeholder="Your email" required/>
+				</div>
+				<div className="form__group">
+					<label className="u-hidden">Message</label>
+					<textarea className="textarea" name="message" placeholder="Message" required></textarea>
+				</div>
+				<div className="form__group">
+					<button className="button button--dark" type="submit">Send</button>
+				</div>
 			</form>
 		)
 	}

@@ -1,0 +1,10 @@
+@import '../reference/index';
+
+$block: 'textarea';
+
+.#{$block} {
+	display: block;
+	min-height: 10rem;
+	padding: 1rem;
+	width: 100%;
+}
