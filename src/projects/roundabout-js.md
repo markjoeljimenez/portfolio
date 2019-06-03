@@ -8,8 +8,8 @@ workInProgress: false
 website:
   githubLink: 'https://github.com/markjoeljimenez/roundaboutjs'
   githubTitle: Github
-  websiteLink: Example
-  websiteTitle: 'https://markjoeljimenez.github.io/roundaboutjs/'
+  websiteLink: 'https://markjoeljimenez.github.io/roundaboutjs/'
+  websiteTitle: Example
 featured: false
 theme: Default
 reverse: true
