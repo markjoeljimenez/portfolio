@@ -28,7 +28,7 @@ export default function Template({ data }) {
 							</div>
 						</div>
 					</div>
-					
+
 					{project.node.childMarkdownRemark.frontmatter.image ? (
 						<picture className="panel__background-picture">
 								<img className="panel__background-image" src={project.node.childMarkdownRemark.frontmatter.image.publicURL} />
