@@ -18,6 +18,11 @@ const Layout = ({ children }) => (
 							name
 							link
 						}
+						socialMedia {
+							icon
+							link
+							name
+						}
 					}
 				}
 				allFile(filter: { name: { eq: "logo" } }) {
@@ -47,7 +52,7 @@ const Layout = ({ children }) => (
 				<div className="main">
 					{children}
 				</div>
-			<Footer />
+			<Footer socialMedia={data.site.siteMetadata.socialMedia}/>
 		</>
 		)}
 	/>

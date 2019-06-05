@@ -37,4 +37,8 @@ $block: 'footer';
 			fill: $primary;
 		}
 	}
+
+	&__link {
+		@include image-replacement;
+	}
 }
