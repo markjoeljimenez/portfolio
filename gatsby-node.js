@@ -4,33 +4,49 @@ exports.createPages = ({actions, graphql}) => {
 	const {createPage} = actions;
 
 	return graphql(`{
-		allFile(
-			filter: { extension: { eq: "md"} }
-		) {
+		allContentfulProject {
 			edges {
 				node {
-					sourceInstanceName
-					childMarkdownRemark {
-						frontmatter {
-							date
-							title
-							client
-							workInProgress
-							path
-							image {
-								publicURL
-							}
-							tag
-							featured
-							reverse
-							website {
-								websiteLink
-								websiteTitle
-							}
+					blogPosts {
+						heading
+						id
+						content {
+							json
 						}
-						html
+						date
+						path
 					}
-					extension
+					client
+					content {
+						json
+					}
+					date
+					display
+					featured
+					heading
+					image {
+						fluid {
+							src
+						}
+					}
+					internal {
+						type
+					}
+					links {
+						githubLink
+						githubTitle
+						websiteLink
+						websiteTitle
+					}
+					path
+					theme
+				}
+			}
+		}
+		allContentfulPost {
+			edges {
+				node {
+					path
 				}
 			}
 		}
@@ -40,12 +56,21 @@ exports.createPages = ({actions, graphql}) => {
 			return Promise.reject(res.errors);
 		}
 
-		res.data.allFile.edges.forEach(({node}) => {
+		// Create project pages
+		res.data.allContentfulProject.edges.forEach(({node}) => {
 			createPage({
-				path: node.childMarkdownRemark.frontmatter.path,
-				component: path.resolve(`src/templates/${node.sourceInstanceName}.tsx`)
+				path: node.path,
+				component: path.resolve(`src/site/templates/project.tsx`)
 			})
-		})
+		});
+
+		// Create post pages
+		res.data.allContentfulPost.edges.forEach(({node}) => {
+			createPage({
+				path: node.path,
+				component: path.resolve(`src/site/templates/post.tsx`)
+			})
+		});
 	})
 }
 

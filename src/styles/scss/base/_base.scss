@@ -11,6 +11,14 @@ textarea {
 	margin: 0;
 }
 
+input,
+select,
+textarea {
+	border: 1px solid $grey;
+	border-radius: 4px;
+	box-shadow: none;
+}
+
 .main {
 	> *:first-child {
 		margin-top: 0;

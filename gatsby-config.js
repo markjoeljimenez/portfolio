@@ -1,3 +1,7 @@
+require("dotenv").config({
+	path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
 	siteMetadata: {
 		title: `Mark Joel Jimenez`,
@@ -7,11 +11,11 @@ module.exports = {
 				name: `Home`
 			},
 			{
-				link: `#work`,
+				link: `/#work`,
 				name: `Work`
 			},
 			{
-				link: `#projects`,
+				link: `/#projects`,
 				name: `Projects`
 			}
 		]
@@ -31,10 +35,25 @@ module.exports = {
 			},
 		},
 		`gatsby-plugin-offline`,
-		`gatsby-plugin-typescript`,
 		`gatsby-plugin-sass`,
-		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
+		`gatsby-plugin-typescript`,
+		`gatsby-transformer-sharp`,
+		{
+			resolve: `gatsby-source-contentful`,
+			options: {
+				spaceId: `whjch1nhywzb`,
+				accessToken: process.env.CONTENTFUL_DELIVERY_ACCESS_TOKEN,
+			},
+		},
+		{
+			resolve: `gatsby-source-contentful`,
+			options: {
+				spaceId: `whjch1nhywzb`,
+				accessToken: process.env.CONTENTFUL_PREVIEW_ACCESS_TOKEN,
+				host: `preview.contentful.com`
+			},
+		},
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -47,20 +66,6 @@ module.exports = {
 			options: {
 				path: `${__dirname}/src/images/`,
 				name: `images`
-			},
-		},
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				path: `${__dirname}/src/posts/`,
-				name: `posts`,
-			},
-		},
-		{
-			resolve: `gatsby-source-filesystem`,
-			options: {
-				path: `${__dirname}/src/projects/`,
-				name: `projects`,
 			},
 		},
 		{
@@ -91,7 +96,6 @@ module.exports = {
 					}
 				]
 			}
-		},
-		`gatsby-plugin-netlify-cms`
+		}
 	],
 }
