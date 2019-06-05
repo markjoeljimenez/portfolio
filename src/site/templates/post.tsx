@@ -8,11 +8,12 @@ import IContentfulPost from '../types/IContentfulPost';
 const dateFns = require('date-fns');
 
 export const postQuery = graphql`
-	query BlogPostByPath {
-		contentfulPost {
+	query BlogPostByPath($path: String!) {
+		contentfulPost(path: {eq: $path}) {
 			content {
 				json
 			}
+			date
 			heading
 			project {
 				blogPosts {
@@ -20,7 +21,6 @@ export const postQuery = graphql`
 					id
 					path
 				}
-				date
 				heading
 				path
 			}
@@ -31,8 +31,6 @@ export const postQuery = graphql`
 export default function Template({ data }) {
 	const post = data.contentfulPost as IContentfulPost;
 
-	console.log(post);
-
 	return (
 		<Layout>
 			{/* <div className={`header-panel panel panel--has-background-image ${!post.frontmatter.image ? 'panel--dark' : ''}`} key={project.node.id}> */}
@@ -41,10 +39,10 @@ export default function Template({ data }) {
 					<div className="row">
 						<div className="column">
 							<div className="header-panel__content">
-								<h1 className="panel__heading"><strong>{post.project[0].heading}</strong></h1>
+								<h1 className="panel__heading"><strong>{post.heading}</strong></h1>
 								<h2 className="panel__subheading"><Link to={post.project[0].path}>{post.project[0].heading}</Link></h2>
 								<h2 className="panel__subheading icon-text icon-text--left">
-								{dateFns.format(new Date(post.project[0].date), 'MMM D, YYYY')}</h2>
+								{dateFns.format(new Date(post.date), 'MMM D, YYYY')}</h2>
 							</div>
 						</div>
 					</div>

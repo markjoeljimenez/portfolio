@@ -7,39 +7,7 @@ exports.createPages = ({actions, graphql}) => {
 		allContentfulProject {
 			edges {
 				node {
-					blogPosts {
-						heading
-						id
-						content {
-							json
-						}
-						date
-						path
-					}
-					client
-					content {
-						json
-					}
-					date
-					display
-					featured
-					heading
-					image {
-						fluid {
-							src
-						}
-					}
-					internal {
-						type
-					}
-					links {
-						githubLink
-						githubTitle
-						websiteLink
-						websiteTitle
-					}
 					path
-					theme
 				}
 			}
 		}
@@ -73,9 +41,3 @@ exports.createPages = ({actions, graphql}) => {
 		});
 	})
 }
-
-const { fmImagesToRelative } = require('gatsby-remark-relative-images');
-
-exports.onCreateNode = ({ node }) => {
-	fmImagesToRelative(node);
-};

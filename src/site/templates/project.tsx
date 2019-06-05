@@ -7,8 +7,8 @@ import IContentfulProject from '../types/IContentfulProject';
 import Layout from '../layouts/default';
 
 export const postQuery = graphql`
-	query ProjectPostByPath {
-		contentfulProject {
+	query ProjectPostByPath($path: String!) {
+		contentfulProject(path: {eq: $path}) {
 			blogPosts {
 				heading
 				id
@@ -24,6 +24,8 @@ export const postQuery = graphql`
 
 export default function Template({ data }) {
 	const project = data.contentfulProject as IContentfulProject;
+
+	console.log(project);
 
 	return (
 		<Layout>
@@ -57,24 +59,26 @@ export default function Template({ data }) {
 							</section>
 						</div>
 
-						<aside className="column column--md-4">
-							<nav className="side-navigation">
-								<ul className="side-navigation__list">
-									<li className="side-navigation__item side-navigation__item--heading">
-										<h2 className="side-navigation__heading">Blog posts</h2>
-									</li>
-									{project.blogPosts
-									.sort((a, b) => {
-										return new Date(b.date) - new Date(a.date);
-									})
-									.map(blogPost => (
-										<li className="side-navigation__item" key={blogPost.id}>
-											<Link className="side-navigation__link" to={blogPost.path}>{blogPost.heading}</Link>
+						{project.blogPosts ? (
+							<aside className="column column--md-4">
+								<nav className="side-navigation">
+									<ul className="side-navigation__list">
+										<li className="side-navigation__item side-navigation__item--heading">
+											<h2 className="side-navigation__heading">Blog posts</h2>
 										</li>
-									))}
-								</ul>
-							</nav>
-						</aside>
+										{project.blogPosts
+										.sort((a, b) => {
+											return new Date(b.date) - new Date(a.date);
+										})
+										.map(blogPost => (
+											<li className="side-navigation__item" key={blogPost.id}>
+												<Link className="side-navigation__link" to={blogPost.path}>{blogPost.heading}</Link>
+											</li>
+										))}
+									</ul>
+								</nav>
+							</aside>
+						) : ''}
 					</div>
 				</div>
 			</article>
