@@ -1,0 +1,19 @@
+@import '../reference/index';
+
+$block: 'technologies-list';
+
+.#{$block} {
+	list-style: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-left: 0;
+
+	&__pill {
+		display: inline-block;
+		margin-left: 0.5rem;
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
