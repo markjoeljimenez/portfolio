@@ -42,6 +42,7 @@ export default () => (
 							websiteTitle
 						}
 						path
+						technologies
 						theme
 					}
 				}

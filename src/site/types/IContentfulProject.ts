@@ -12,6 +12,7 @@ export default interface IContentfulProject {
 	links: IContentfulLinks;
 	path?: string;
 	theme: string[];
+	technologies: string[];
 }
 
 export interface IContentfulRichTextNode {

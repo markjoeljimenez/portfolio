@@ -14,6 +14,7 @@ export default class ProjectPanel extends React.Component<IProjectPanelProps> {
 	}
 
 	render() {
+		console.log(this.props.settings);
 		return (
 			<section className={`panel${this.props.settings.theme.length !== 0 ? ` panel--has-background-color ${this.props.settings.theme.map(theme => `panel--${theme.toLowerCase()}`).join(' ')}` : ''}${!this.props.settings.featured ? ' insight-panel' : ''}`}>
 				<div className="panel__container">
@@ -45,11 +46,21 @@ export default class ProjectPanel extends React.Component<IProjectPanelProps> {
 									</p>
 								) : ''}
 							</div>
+
 							{this.props.settings.content.json ? (
 								<div className="panel__short-description">
 									{documentToReactComponents(this.props.settings.content.json)}
 								</div>
 							) : ''}
+
+							{this.props.settings.technologies ? (
+								<ul className="technologies-list">
+									{this.props.settings.technologies.map((technology, i) => (
+										<li className="technologies-list__pill pill" key={i}>{technology}</li>
+									))}
+								</ul>
+							) : ''}
+
 							{this.props.settings.links ? (
 								<div className="panel__footer">
 									<ul className="panel__list">
