@@ -19,11 +19,13 @@ export default class ProjectPanel extends React.Component<IProjectPanelProps> {
 			<section className={`panel${this.props.settings.theme.length !== 0 ? ` panel--has-background-color ${this.props.settings.theme.map(theme => `panel--${theme.toLowerCase()}`).join(' ')}` : ''}${!this.props.settings.featured ? ' insight-panel' : ''}`}>
 				<div className="panel__container">
 					<div className="row">
-						{this.props.settings.image && this.props.settings.featured ? (
+						{this.props.settings.featured ? (
 							<div className="column column--md-6">
-								<picture className="panel__picture">
-									<img className="panel__image" src={this.props.settings.image.fluid.src} />
-								</picture>
+								{this.props.settings.image ? (
+									<picture className="panel__picture">
+										<img className="panel__image" src={this.props.settings.image.fluid.src} />
+									</picture>
+								) : ''}
 							</div>
 						) : ''}
 						<div className={`panel__content column column--md-${this.props.settings.featured ? '6' : '7'}`}>
