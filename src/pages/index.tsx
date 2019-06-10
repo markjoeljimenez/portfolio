@@ -53,7 +53,7 @@ export default () => (
 				<Layout>
 					<div className="hero-panel panel">
 						<div className="panel__container">
-							<div className="row row--no-margin-top">
+							<div className="row">
 								<div className="column">
 									<h1>Let's skip introductions
 										<br/>and get to <Link to={'#work'}>work</Link>.

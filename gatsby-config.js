@@ -17,6 +17,10 @@ module.exports = {
 			{
 				link: `/#projects`,
 				name: `Projects`
+			},
+			{
+				link: `/resume`,
+				name: `Resume`
 			}
 		],
 		socialMedia: [

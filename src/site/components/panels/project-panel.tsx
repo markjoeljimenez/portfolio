@@ -14,7 +14,6 @@ export default class ProjectPanel extends React.Component<IProjectPanelProps> {
 	}
 
 	render() {
-		console.log(this.props.settings);
 		return (
 			<section className={`panel${this.props.settings.theme.length !== 0 ? ` panel--has-background-color ${this.props.settings.theme.map(theme => `panel--${theme.toLowerCase()}`).join(' ')}` : ''}${!this.props.settings.featured ? ' insight-panel' : ''}`}>
 				<div className="panel__container">

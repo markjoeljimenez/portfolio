@@ -19,17 +19,6 @@ textarea {
 	box-shadow: none;
 }
 
-.main {
-	> *:first-child {
-		margin-top: 0;
-		padding-top: calc(10rem / 3 + 3.5rem);
-
-		@include media-min(md) {
-			padding-top: 9rem;
-		}
-	}
-}
-
 * {
 	box-sizing: border-box;
 }
