@@ -17,7 +17,12 @@ $block: 'resume';
 
 	&__header {
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
+		
+		@include media-min(md) {
+			flex-direction: row;
+			justify-content: space-between;
+		}
 	}
 
 	&__section {
@@ -27,26 +32,27 @@ $block: 'resume';
 
 		&:first-child {
 			border-top: 0;
-			padding-top: 4rem;
+
+			@include media-min(md) {
+				padding-top: 4rem;
+			}
 		}
 	}
 
 	&__heading {
+		@include font-size-33;
+		@include font-weight(100);
+		
 		color: $primary;
-		margin: 0;
-		margin-bottom: 0.5rem;
-		text-transform: uppercase;
+		margin-bottom: 1rem;
+		margin-top: 0.5rem;
+		
+		@include media-min(sm) {
+			@include font-size-48;
+		}
 		
 		&--header {
-			@include font-size-33;
-			@include font-weight(100);
-			
 			margin: 0;
-			text-transform: initial;
-			
-			@include media-min(sm) {
-				@include font-size-48;
-			}
 		}
 	}
 
@@ -57,8 +63,26 @@ $block: 'resume';
 
 	&__list {
 		list-style: none;
-		padding-left: 0;
-		margin-bottom: 0;
 		margin-top: 0;
+
+		&--header {
+			margin-bottom: 0;
+			padding-left: 0;
+
+			.#{$block}__item {
+				line-height: initial;
+				margin: 0;
+			}
+		}
+
+		&--2 {
+			columns: 2;
+		}
+	}
+
+	&__item {
+		line-height: 1.5;
+		margin-bottom: 0.5rem;
+		margin-top: 0.5rem;
 	}
 }

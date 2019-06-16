@@ -1,0 +1,38 @@
+@import '../reference/index';
+
+$block: 'resume-milestone';
+
+.#{$block} {
+	& + & {
+		margin-top: 2rem;
+	}
+
+	&__header {
+		display: flex;
+		justify-content: space-between;
+
+		> * {
+			margin: 0;
+		}
+	}
+
+	&__heading,
+	&__subheading {
+		@include font-size-16;
+	}
+
+	&__subheading {
+		font-weight: 400;
+		margin-bottom: 0;
+		margin-top: 0.25rem;
+	}
+
+	&__date,
+	&__subheading {
+		font-style: italic;
+	}
+
+	.resume__list {
+		margin-top: 0.5rem;
+	}
+}
