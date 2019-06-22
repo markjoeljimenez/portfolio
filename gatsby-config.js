@@ -56,7 +56,16 @@ module.exports = {
 			},
 		},
 		`gatsby-plugin-offline`,
-		`gatsby-plugin-sass`,
+		{
+			resolve: `gatsby-plugin-sass`,
+			options: {
+				postCssPlugins: [
+					require('postcss-inline-svg')({
+						path: 'src/'
+					})
+				]
+			}
+		},
 		`gatsby-plugin-sharp`,
 		`gatsby-plugin-typescript`,
 		`gatsby-transformer-sharp`,

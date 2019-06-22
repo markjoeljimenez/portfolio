@@ -18,7 +18,7 @@ $block: 'resume';
 	&__header {
 		display: flex;
 		flex-direction: column;
-		
+
 		@include media-min(md) {
 			flex-direction: row;
 			justify-content: space-between;
@@ -26,33 +26,30 @@ $block: 'resume';
 	}
 
 	&__section {
-		border-top: 1px solid $grey;
+		border-top: 1px solid $grey-light-2;
 		padding-bottom: 1rem;
 		padding-top: 1rem;
 
 		&:first-child {
 			border-top: 0;
-
-			@include media-min(md) {
-				padding-top: 4rem;
-			}
+			padding-top: 0;
 		}
 	}
 
 	&__heading {
-		@include font-size-33;
+		@include font-size-24;
 		@include font-weight(100);
-		
+
 		color: $primary;
 		margin-bottom: 1rem;
 		margin-top: 0.5rem;
-		
-		@include media-min(sm) {
-			@include font-size-48;
-		}
-		
+
 		&--header {
 			margin: 0;
+
+			@include media-min(sm) {
+				@include font-size-48;
+			}
 		}
 	}
 
@@ -64,12 +61,14 @@ $block: 'resume';
 	&__list {
 		list-style: none;
 		margin-top: 0;
+		padding-left: 0;
 
 		&--header {
 			margin-bottom: 0;
 			padding-left: 0;
 
 			.#{$block}__item {
+				background: none;
 				line-height: initial;
 				margin: 0;
 			}
@@ -81,8 +80,11 @@ $block: 'resume';
 	}
 
 	&__item {
+		@include background-image-svg('../../images/icons/arrow-ios-forward-outline.svg', 1rem, 1rem, 1rem, 50%);
+
 		line-height: 1.5;
 		margin-bottom: 0.5rem;
 		margin-top: 0.5rem;
+		padding-left: 2.75rem;
 	}
 }
