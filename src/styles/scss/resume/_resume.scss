@@ -65,12 +65,11 @@ $block: 'resume';
 
 		&--header {
 			margin-bottom: 0;
+			margin-top: 1rem;
 			padding-left: 0;
 
-			.#{$block}__item {
-				background: none;
-				line-height: initial;
-				margin: 0;
+			@include media-min(md) {
+				margin-top: 0;
 			}
 		}
 
@@ -79,12 +78,47 @@ $block: 'resume';
 		}
 	}
 
-	&__item {
-		@include background-image-svg('../../images/icons/arrow-ios-forward-outline.svg', 1rem, 1rem, 1rem, 50%);
+	&__link {
+		svg {
+			margin-right: 0.5rem;
+			max-width: 1.5rem;
+			vertical-align: middle;
+		}
+	}
 
-		line-height: 1.5;
-		margin-bottom: 0.5rem;
-		margin-top: 0.5rem;
-		padding-left: 2.75rem;
+	&__rte {
+		margin-top: 1rem;
+
+		ul {
+			list-style: none;
+			margin-bottom: 0;
+			margin-top: 0;
+			padding-left: 0;
+		}
+
+		li {
+			@include background-image-svg('../../images/icons/arrow-ios-forward-outline.svg', 1rem, 1rem, 0, 0.5rem);
+
+			line-height: 1.5;
+			margin-bottom: 0.5rem;
+			margin-top: 0.5rem;
+			padding-left: 1.5rem;
+			
+			@include media-min(md) {
+				@include background-image-svg('../../images/icons/arrow-ios-forward-outline.svg', 1rem, 1rem, 1rem, 0.5rem);
+				
+				padding-left: 2.75rem;
+			}
+
+			> * {
+				&:first-child {
+					margin-top: 0;
+				}
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
 	}
 }

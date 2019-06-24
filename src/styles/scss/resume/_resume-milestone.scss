@@ -8,23 +8,30 @@ $block: 'resume-milestone';
 	}
 
 	&__header {
-		display: flex;
-		justify-content: space-between;
-
-		> * {
-			margin: 0;
+		@include media-min(md) {
+			display: flex;
+			justify-content: space-between;
 		}
 	}
 
 	&__heading,
 	&__subheading {
 		@include font-size-16;
+
+		margin: 0;
 	}
 
 	&__subheading {
+		&::before {
+			content: '-';
+		}
 		font-weight: 400;
-		margin-bottom: 0;
-		margin-top: 0.25rem;
+		// margin-bottom: 0;
+		// margin-top: 0.25rem;
+	}
+
+	&__date {
+		margin: 0;
 	}
 
 	&__date,
