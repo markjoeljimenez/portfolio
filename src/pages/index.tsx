@@ -23,9 +23,6 @@ export default () => (
 							path
 						}
 						client
-						content {
-							json
-						}
 						date
 						display
 						featured
