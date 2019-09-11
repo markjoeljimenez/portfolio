@@ -28,27 +28,25 @@ export default class ProjectPanel extends React.Component<IProjectPanelProps> {
 							</div>
 						) : ''}
 						<div className={`panel__content column column--md-${this.props.settings.featured ? '6' : '7'}`}>
-							{this.props.settings.links ? (
-								<div className="panel__header">
-									<h2 className="panel__heading">
-										{this.props.settings.links.websiteLink || this.props.settings.path ? (
-											this.props.settings.links.websiteLink ? (
-												<a href={this.props.settings.links.websiteLink}>{this.props.settings.heading}</a>
-											) : (
-												<Link to={this.props.settings.path}>{this.props.settings.heading}</Link>
-											)
+							<div className="panel__header">
+								<h2 className="panel__heading">
+									{this.props.settings.path ? (
+										this.props.settings.links && this.props.settings.links.websiteLink ? (
+											<a href={this.props.settings.links.websiteLink}>{this.props.settings.heading}</a>
 										) : (
-											this.props.settings.heading
-										)}
-										{/* {this.props.settings.workInProgress ? <span className='pill pill--yellow'>WIP</span> : ''} */}
-									</h2>
-									{this.props.settings.client ? (
-										<p className="panel__client">
-											{this.props.settings.client}
-										</p>
-									) : ''}
-								</div>
-							) : ''}
+											<Link to={this.props.settings.path}>{this.props.settings.heading}</Link>
+										)
+									) : (
+										this.props.settings.heading
+									)}
+									{/* {this.props.settings.workInProgress ? <span className='pill pill--yellow'>WIP</span> : ''} */}
+								</h2>
+								{this.props.settings.client ? (
+									<p className="panel__client">
+										{this.props.settings.client}
+									</p>
+								) : ''}
+							</div>
 
 							{this.props.settings.content.json ? (
 								<div className="panel__short-description">
