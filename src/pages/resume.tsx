@@ -70,12 +70,6 @@ export default () => {
 												{data.site.siteMetadata.socialMedia.find(socialMediaItem => socialMediaItem.name === 'LinkedIn').link}
 											</a>
 										</li>
-										<li className="resume__item">
-											<a className="resume__link" href={data.site.siteMetadata.socialMedia.find(socialMediaItem => socialMediaItem.name === 'Website').link}>
-												<span dangerouslySetInnerHTML={{__html: data.site.siteMetadata.socialMedia.find(socialMediaItem => socialMediaItem.name === 'Website').icon}}/>
-												{data.site.siteMetadata.socialMedia.find(socialMediaItem => socialMediaItem.name === 'Website').link}
-											</a>
-										</li>
 									</ul>
 								</div>
 							</section>
