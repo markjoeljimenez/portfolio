@@ -44,7 +44,9 @@ export default function Template({ data }) {
 						<div className="column">
 							<div className="header-panel__content">
 								<h1 className="panel__heading"><strong>{post.heading}</strong></h1>
-								<h2 className="panel__subheading"><Link to={post.project[0].path}>{post.project[0].heading}</Link></h2>
+								{post.project ? (
+									<h2 className="panel__subheading"><Link to={post.project[0].path}>{post.project[0].heading}</Link></h2>
+								) : ''}
 								<h2 className="panel__subheading icon-text icon-text--left">
 								{dateFns.format(new Date(post.date), 'MMM D, YYYY')}</h2>
 							</div>
@@ -70,22 +72,24 @@ export default function Template({ data }) {
 							</div>
 						</div>
 						<aside className="column column--md-4">
-							<nav className="side-navigation">
-								<ul className="side-navigation__list">
-									<li className="side-navigation__item side-navigation__item--heading">
-										<h2 className="side-navigation__heading">Blog posts</h2>
-									</li>
-									{post.project[0].blogPosts
-									.sort((a, b) => {
-										return new Date(b.date) - new Date(a.date);
-									})
-									.map(blogPost => (
-										<li className="side-navigation__item" key={blogPost.id}>
-											<Link className="side-navigation__link" activeClassName="side-navigation__link--current" to={blogPost.path}>{blogPost.heading}</Link>
+							{post.project ? (
+								<nav className="side-navigation">
+									<ul className="side-navigation__list">
+										<li className="side-navigation__item side-navigation__item--heading">
+											<h2 className="side-navigation__heading">Blog posts</h2>
 										</li>
-									))}
-								</ul>
-							</nav>
+										{post.project[0].blogPosts
+											.sort((a, b) => {
+												return new Date(b.date) - new Date(a.date);
+											})
+											.map(blogPost => (
+												<li className="side-navigation__item" key={blogPost.id}>
+													<Link className="side-navigation__link" activeClassName="side-navigation__link--current" to={blogPost.path}>{blogPost.heading}</Link>
+												</li>
+										))}
+									</ul>
+								</nav>
+							) : ''}
 						</aside>
 					</div>
 				</div>

@@ -6,5 +6,5 @@ export default interface IContentfulPost {
 	heading: string;
 	id: string;
 	path: string;
-	project?: IContentfulProject;
+	project?: IContentfulProject[];
 }

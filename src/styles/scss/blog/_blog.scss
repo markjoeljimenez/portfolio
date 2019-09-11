@@ -104,19 +104,19 @@ $block: 'blog';
 			}
 		}
 
-		pre {
-			background-color: $grey-lightest;
-			margin: 0;
-			padding-left: 1rem;
-			padding-right: 1rem;
+		// pre {
+		// 	background-color: $grey-lightest;
+		// 	margin: 0;
+		// 	padding-left: 1rem;
+		// 	padding-right: 1rem;
 
-			&:first-child {
-				padding-top: 1rem;
-			}
+		// 	&:first-child {
+		// 		padding-top: 1rem;
+		// 	}
 
-			&:last-child {
-				padding-bottom: 1rem;
-			}
-		}
+		// 	&:last-child {
+		// 		padding-bottom: 1rem;
+		// 	}
+		// }
 	}
 }
