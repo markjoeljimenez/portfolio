@@ -16,11 +16,11 @@ export default () => (
 						blogPosts {
 							heading
 							id
-							content {
-								json
-							}
 							date
 							path
+						}
+						content {
+							json
 						}
 						client
 						date
