@@ -17,11 +17,11 @@ module.exports = {
 			{
 				link: `/#projects`,
 				name: `Projects`
-			},
-			{
-				link: `/resume`,
-				name: `Resume`
 			}
+			// {
+			// 	link: `/resume`,
+			// 	name: `Resume`
+			// }
 		],
 		socialMedia: [
 			{
