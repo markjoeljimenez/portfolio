@@ -10,9 +10,6 @@ const dateFns = require('date-fns');
 export const postQuery = graphql`
 	query BlogPostByPath($path: String!) {
 		contentfulPost(path: {eq: $path}) {
-			content {
-				json
-			}
 			date
 			heading
 			project {
@@ -61,7 +58,7 @@ export default function Template({ data }) {
 					<div className="row">
 						<div className="column column--md-8">
 							<div className="blog__rte">
-								{documentToReactComponents(post.content.json)}
+								{/* {documentToReactComponents(post.content.json)} */}
 							</div>
 						</div>
 						<aside className="column column--md-4">
