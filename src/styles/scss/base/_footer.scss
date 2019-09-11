@@ -23,9 +23,8 @@ $block: 'footer';
 	&__item {
 		display: inline-block;
 
-		&:not(:first-child):not(:last-child) {
+		&:not(:first-child) {
 			margin-left: 1rem;
-			margin-right: 1rem;
 		}
 	}
 
