@@ -143,6 +143,8 @@ $block: 'panel';
 		@include font-weight(100);
 		
 		margin: 0;
+		overflow: hidden;
+		text-overflow: ellipsis;
 		
 		@include media-min(sm) {
 			@include font-size-48;

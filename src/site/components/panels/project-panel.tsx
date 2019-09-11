@@ -27,7 +27,7 @@ export default class ProjectPanel extends React.Component<IProjectPanelProps> {
 								) : ''}
 							</div>
 						) : ''}
-						<div className={`panel__content column column--md-${this.props.settings.featured ? '6' : '7'}`}>
+						<div className={`panel__content column column--md-${this.props.settings.featured ? '6' : '8'}`}>
 							<div className="panel__header">
 								<h2 className="panel__heading">
 									{this.props.settings.path ? (
@@ -87,7 +87,7 @@ export default class ProjectPanel extends React.Component<IProjectPanelProps> {
 							) : ''}
 						</div>
 						{this.props.settings.blogPosts && !this.props.settings.featured ? (
-							<div className={`column column--md-3 column--md-push-1 ${this.props.settings.blogPosts.length < 1 ? 'column--md-hidden': ''}`}>
+							<div className={`column column--md-4 ${this.props.settings.blogPosts.length < 1 ? 'column--md-hidden': ''}`}>
 								<ul className="panel__list">
 									{this.props.settings.blogPosts
 									.sort((a, b) => {

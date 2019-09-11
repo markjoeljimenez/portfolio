@@ -16,12 +16,20 @@ $block: 'side-navigation';
 
 		box-sizing: border-box;
 		border-left: 1px solid rgba($primary, 0.25);
-		line-height: 2;
 		padding-left: 1.5rem;
+	}
+
+	&__item {
+		&.#{$block}__item--heading + & {
+			margin-top: 1.25rem;
+		}
 	}
 	
 	&__link {
 		color: $grey-dark;
+		display: block;
+		padding-bottom: 0.5rem;
+		padding-top: 0.5rem;
 		position: relative;
 
 		&--current {

@@ -31,6 +31,8 @@ export const postQuery = graphql`
 export default function Template({ data }) {
 	const post = data.contentfulPost as IContentfulPost;
 
+	console.log(post);
+
 	return (
 		<Layout>
 			{/* <div className={`header-panel panel panel--has-background-image ${!post.frontmatter.image ? 'panel--dark' : ''}`} key={project.node.id}> */}

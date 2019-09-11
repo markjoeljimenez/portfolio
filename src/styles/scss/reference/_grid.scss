@@ -23,6 +23,16 @@ $main-padding: 8rem;
 	max-width: $width;
 	padding-left: $grid-gutter-width;
 	padding-right: $grid-gutter-width;
+
+	@include media-min(md) {
+		padding-left: $grid-gutter-width * 2;
+		padding-right: $grid-gutter-width * 2;
+	}
+
+	@include media-min(md) {
+		padding-left: $grid-gutter-width * 4;
+		padding-right: $grid-gutter-width * 4;
+	}
 }
 
 /// Creates a row, allowing columns to fit within it.
@@ -31,6 +41,11 @@ $main-padding: 8rem;
 	flex-wrap: wrap;
 	margin-left: -$grid-gutter-width;
 	margin-right: -$grid-gutter-width;
+
+	@include media-min(md) {
+		margin-left: -$grid-gutter-width;
+		margin-right: -$grid-gutter-width;
+	}
 }
 
 /// Create a column of a specific size.
