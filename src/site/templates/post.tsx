@@ -12,11 +12,16 @@ export const postQuery = graphql`
 		contentfulPost(path: {eq: $path}) {
 			date
 			heading
+			content {
+				childMarkdownRemark {
+					html
+				}
+			}
 			project {
 				blogPosts {
-					heading
-					id
 					path
+					id
+					heading
 				}
 				heading
 				path
@@ -59,6 +64,9 @@ export default function Template({ data }) {
 						<div className="column column--md-8">
 							<div className="blog__rte">
 								{/* {documentToReactComponents(post.content.json)} */}
+								{post.content ? (
+									<div dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html}} />
+								) : ''}
 							</div>
 						</div>
 						<aside className="column column--md-4">

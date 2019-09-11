@@ -14,10 +14,15 @@ export default () => (
 				edges {
 					node {
 						blogPosts {
-							heading
-							id
-							date
 							path
+							id
+							heading
+							date
+							content {
+								childMarkdownRemark {
+									html
+								}
+							}
 						}
 						content {
 							json

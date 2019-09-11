@@ -16,7 +16,9 @@ export default interface IContentfulProject {
 }
 
 export interface IContentfulRichTextNode {
-	json: any;
+	childMarkdownRemark: {
+		html: any;
+	};
 }
 
 interface IContentfulLinks {
