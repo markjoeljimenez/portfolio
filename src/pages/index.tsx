@@ -68,7 +68,7 @@ export default () => (
 					<section id="work">
 						{data.allContentfulProject.edges.filter(project => project.node.featured)
 						.sort((a, b) => {
-							return new Date(b.node.date) - new Date(a.node.date);
+							return new Date(b.node.date).getTime() - new Date(a.node.date).getTime();
 						}).map((project, i) => {
 							return (
 								<ProjectPanel
@@ -84,7 +84,7 @@ export default () => (
 					<section id="projects">
 						{data.allContentfulProject.edges.filter(project => !project.node.featured)
 						.sort((a, b) => {
-							return new Date(b.node.date) - new Date(a.node.date);
+							return new Date(b.node.date).getTime() - new Date(a.node.date).getTime();
 						}).map((project, i) => {
 							return (
 								<ProjectPanel

@@ -80,7 +80,7 @@ export default function Template({ data }) {
 										</li>
 										{post.project[0].blogPosts
 											.sort((a, b) => {
-												return new Date(b.date) - new Date(a.date);
+												return new Date(b.date).getTime() - new Date(a.date).getTime();
 											})
 											.map(blogPost => (
 												<li className="side-navigation__item" key={blogPost.id}>

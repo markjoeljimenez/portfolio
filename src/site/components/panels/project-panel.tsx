@@ -91,7 +91,7 @@ export default class ProjectPanel extends React.Component<IProjectPanelProps> {
 								<ul className="panel__list">
 									{this.props.settings.blogPosts
 									.sort((a, b) => {
-										return new Date(b.date) - new Date(a.date);
+										return new Date(b.date).getTime() - new Date(a.date).getTime();
 									})
 									.map(post => (
 										<li className="panel__item" key={post.id}>
