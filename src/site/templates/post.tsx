@@ -64,12 +64,9 @@ export default function Template({ data }) {
 				<div className="blog__container">
 					<div className="row">
 						<div className="column column--md-8">
-							<div className="blog__rte">
-								{/* {documentToReactComponents(post.content.json)} */}
-								{post.content ? (
-									<div dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html}} />
-								) : ''}
-							</div>
+							{post.content ? (
+								<div className="rte" dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html}} />
+							) : ''}
 						</div>
 						<aside className="column column--md-4">
 							{post.project ? (
