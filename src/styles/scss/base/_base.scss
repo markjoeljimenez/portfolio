@@ -7,6 +7,7 @@ input,
 select,
 textarea {
 	@include font-family-primary;
+	@include font-size-16;
 
 	margin: 0;
 }
