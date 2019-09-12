@@ -8,10 +8,9 @@ $block: 'blog';
 	margin-bottom: 4rem;
 	margin-top: 4rem;
 
-	// @include media-min(md) {
-	// 	margin-bottom: 2rem;
-	// 	margin-top: 2rem;
-	// }
+	&__row {
+		align-items: baseline;
+	}
 
 	&__list {
 		@include clean-list;
