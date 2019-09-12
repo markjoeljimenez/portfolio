@@ -64,7 +64,6 @@ export default function Template({ data }) {
 				<div className="blog__container">
 					<div className="blog__row row">
 						<div className="column column--md-8">
-							<h1>test</h1>
 							{post.content ? (
 								<div className="rte" dangerouslySetInnerHTML={{ __html: post.content.childMarkdownRemark.html}} />
 							) : ''}
