@@ -10,6 +10,20 @@ export default () => (
 	<StaticQuery
 		query={graphql`
 		query IndexQuery {
+			site {
+				siteMetadata {
+					title
+					menuPages {
+						name
+						link
+					}
+					socialMedia {
+						icon
+						link
+						name
+					}
+				}
+			},
 			allContentfulProject {
 				edges {
 					node {
@@ -48,6 +62,9 @@ export default () => (
 						theme
 					}
 				}
+			},
+			file {
+				publicURL
 			}
 		}`}
 		render={data => (
@@ -55,13 +72,24 @@ export default () => (
 				<Layout>
 					<div className="hero-panel panel">
 						<div className="panel__container">
-							<div className="row">
-								<div className="column">
-									<h1>Let's skip introductions
-										<br/>and get to <Link to={'#work'}>work</Link>.
-									</h1>
-								</div>
-							</div>
+							<picture className="hero-panel__picture">
+								<img className="hero-panel__image" src={data.file.publicURL} alt="Headshot picture"/>
+							</picture>
+							<h1 className="hero-panel__heading">Mark Jimenez</h1>
+							<p className="hero-panel__summary">I'm a front-end developer living in Toronto, ON developing websites with 
+							<br/>an optimized and accessibility driven mindset.</p>
+							<nav className="hero-panel__social-media social-media">
+								<ul className="social-media__list">
+									{data.site.siteMetadata.socialMedia.map((socialMediaLink, i) => (
+										<li className="social-media__item" key={`social-media-${i}`}>
+											<a className="social-media__link" href={socialMediaLink.link} target="_blank" rel="noopener noreferrer">
+												<div className="social-media__icon" dangerouslySetInnerHTML={{ __html: socialMediaLink.icon }} />
+												{socialMediaLink.name}
+											</a>
+										</li>
+									))}
+								</ul>
+							</nav>
 						</div>
 					</div>
 
