@@ -1,0 +1,36 @@
+@import '../reference/index';
+
+$block: 'social-media';
+
+.#{$block} {
+	&__list {
+		@include clean-list;
+
+		text-align: center;
+	}
+
+	&__item {
+		display: inline-block;
+
+		&:not(:first-child) {
+			margin-left: 1rem;
+		}
+	}
+
+	&__icon {
+		height: 1.5rem;
+		width: 1.5rem;
+
+		svg {
+			fill: $grey;
+			
+			@include hover-focus {
+				fill: $primary;
+			}
+		}
+	}
+
+	&__link {
+		@include image-replacement;
+	}
+}

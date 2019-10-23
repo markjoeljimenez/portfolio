@@ -4,6 +4,7 @@ import { Link, StaticQuery, graphql } from 'gatsby';
 import Layout from '../site/layouts/default';
 import ProjectPanel from '../site/components/panels/project-panel';
 import ContactPanel from '../site/components/panels/contact-panel';
+import SocialMedia from '../site/components/social-media';
 
 
 export default () => (
@@ -78,18 +79,7 @@ export default () => (
 							<h1 className="hero-panel__heading">Mark Jimenez</h1>
 							<p className="hero-panel__summary">I'm a front-end developer living in Toronto, ON developing websites with 
 							<br/>an optimized and accessibility driven mindset.</p>
-							<nav className="hero-panel__social-media social-media">
-								<ul className="social-media__list">
-									{data.site.siteMetadata.socialMedia.map((socialMediaLink, i) => (
-										<li className="social-media__item" key={`social-media-${i}`}>
-											<a className="social-media__link" href={socialMediaLink.link} target="_blank" rel="noopener noreferrer">
-												<div className="social-media__icon" dangerouslySetInnerHTML={{ __html: socialMediaLink.icon }} />
-												{socialMediaLink.name}
-											</a>
-										</li>
-									))}
-								</ul>
-							</nav>
+							<SocialMedia links={data.site.siteMetadata.socialMedia}/>
 						</div>
 					</div>
 

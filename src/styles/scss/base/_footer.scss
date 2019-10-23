@@ -13,31 +13,4 @@ $block: 'footer';
 		margin-bottom: $spacing-md;
 		margin-top: $spacing-md;
 	}
-
-	&__list {
-		@include clean-list;
-
-		text-align: center;
-	}
-
-	&__item {
-		display: inline-block;
-
-		&:not(:first-child) {
-			margin-left: 1rem;
-		}
-	}
-
-	&__icon {
-		height: 1.5rem;
-		width: 1.5rem;
-
-		svg {
-			fill: $primary;
-		}
-	}
-
-	&__link {
-		@include image-replacement;
-	}
 }
