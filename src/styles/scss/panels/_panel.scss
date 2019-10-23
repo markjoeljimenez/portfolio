@@ -149,6 +149,14 @@ $block: 'panel';
 		@include media-min(sm) {
 			@include font-size-48;
 		}
+
+		a {
+			white-space: nowrap;
+		}
+
+		svg {
+			margin-left: 1rem;
+		}
 	}
 	
 	&__subheading {
