@@ -2,7 +2,7 @@ $line-height: 1.5;
 $default-font: 'Source Sans Pro' !default;
 $default-color: $black !default;
 
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700&display=swap');
 
 @mixin font-family-primary {
 	font-family: $default-font, sans-serif;
