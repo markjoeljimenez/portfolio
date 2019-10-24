@@ -85,32 +85,27 @@ export default () => (
 
 					<section id="work">
 						{data.allContentfulProject.edges.filter(project => project.node.featured)
-						.sort((a, b) => {
-							return new Date(b.node.date).getTime() - new Date(a.node.date).getTime();
-						}).map((project, i) => {
-							return (
-								<ProjectPanel
-									key={i}
-									settings={project.node}
-								/>
-							)
-						})}
+						.sort((a, b) => new Date(b.node.date).getTime() - new Date(a.node.date).getTime())
+						.map((project, i) => (
+							<ProjectPanel
+								key={i}
+								settings={project.node}
+							/>
+						))}
 					</section>
 
 					<ContactPanel />
 
 					<section id="projects">
-						{data.allContentfulProject.edges.filter(project => !project.node.featured)
-						.sort((a, b) => {
-							return new Date(b.node.date).getTime() - new Date(a.node.date).getTime();
-						}).map((project, i) => {
-							return (
-								<ProjectPanel
-									key={i}
-									settings={project.node}
-								/>
-							)
-						})}
+						{data.allContentfulProject.edges
+						.filter(project => !project.node.featured)
+						.sort((a, b) => new Date(b.node.date).getTime() - new Date(a.node.date).getTime())
+						.map((project, i) => (
+							<ProjectPanel
+								key={i}
+								settings={project.node}
+							/>
+						))}
 					</section>
 				</Layout>
 			</>

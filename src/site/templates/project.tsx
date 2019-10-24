@@ -13,6 +13,7 @@ export const postQuery = graphql`
 				heading
 				id
 				path
+				date
 			}
 			content {
 				json
@@ -65,9 +66,7 @@ export default function Template({ data }) {
 											<h2 className="side-navigation__heading">Blog posts</h2>
 										</li>
 										{project.blogPosts
-										.sort((a, b) => {
-											return new Date(b.date).getTime() - new Date(a.date).getTime();
-										})
+										.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 										.map(blogPost => (
 											<li className="side-navigation__item" key={blogPost.id}>
 												<Link className="side-navigation__link" to={blogPost.path}>{blogPost.heading}</Link>
