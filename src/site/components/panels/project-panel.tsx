@@ -22,7 +22,7 @@ export default class ProjectPanel extends React.Component<IProjectPanelProps> {
 							<div className="column column--md-6">
 								{this.props.settings.image ? (
 									<picture className="panel__picture">
-										<img className="panel__image" src={this.props.settings.image.fluid.src} />
+										<img className="panel__image" src={this.props.settings.image.fluid.src} alt={this.props.settings.image.description}/>
 									</picture>
 								) : ''}
 							</div>

@@ -30,6 +30,7 @@ interface IContentfulLinks {
 
 interface IContentfulImage {
 	fluid: IContentfulFluid;
+	description: string;
 }
 
 interface IContentfulFluid {

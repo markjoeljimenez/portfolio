@@ -48,6 +48,7 @@ export default () => (
 						featured
 						heading
 						image {
+							description
 							fluid {
 								src
 							}
