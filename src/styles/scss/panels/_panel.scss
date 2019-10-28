@@ -177,7 +177,7 @@ $block: 'panel';
 	&__client {
 		@include font-size-18;
 
-		color: $grey;
+		color: $grey-darker;
 		padding-left: 2rem;
 		position: relative;
 
