@@ -5,6 +5,8 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `Mark Joel Jimenez`,
+    description: ` I'm a front-end developer living in Toronto, ON.I develop websites with an optimized and accessibility
+	driven mindset.`,
     menuPages: [
       {
         link: `/`,
