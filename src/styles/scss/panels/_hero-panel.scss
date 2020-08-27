@@ -3,55 +3,58 @@
 $block: 'hero-panel';
 
 .#{$block} {
-	text-align: center;
+  text-align: center;
 
-	@include media-max(md) {
-		margin-top: 1rem;
-	}
+  @include media-max(md) {
+    margin-top: 1rem;
+  }
 
-	&__heading {
-		@include font-size-48;
+  &__heading {
+    @include font-size-48;
 
-		@include font-weight(100);
-		
-		color: $primary;
-		margin: 0;
-		margin-top: 1rem;
+    @include font-weight(100);
 
-		@include media-min(xs) {
-			@include font-size-57;
-		}
+    color: $primary;
+    margin: 0;
+    margin-top: 1rem;
 
-		@include media-min(md) {
-			@include font-size-72;
+    @include media-min(xs) {
+      @include font-size-57;
+    }
 
-			margin-top: 1.5rem;
-		}
-	}
+    @include media-min(md) {
+      @include font-size-72;
 
-	&__summary {
-		@include font-size-18;
+      margin-top: 1.5rem;
+    }
+  }
 
-		@include font-weight(100);
+  &__summary {
+    @include font-size-18;
 
-		line-height: 2;
-	}
+    @include font-weight(100);
 
-	&__picture {
-		display: inline-block;
-		max-width: 8rem;
+    line-height: 2;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 24rem;
+  }
 
-		@include media-min(md) {
-			max-width: 14rem;
-		}
-	}
+  &__picture {
+    display: inline-block;
+    max-width: 8rem;
 
-	&__image {
-		display: block;
-		width: 100%;
-	}
+    @include media-min(md) {
+      max-width: 14rem;
+    }
+  }
 
-	.social-media {
-		margin-top: 2rem;
-	}
+  &__image {
+    display: block;
+    width: 100%;
+  }
+
+  .social-media {
+    margin-top: 2rem;
+  }
 }

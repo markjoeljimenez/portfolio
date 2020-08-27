@@ -83,10 +83,9 @@ export default () => (
               </picture>
               <h1 className="hero-panel__heading">Mark Jimenez</h1>
               <p className="hero-panel__summary">
-                I'm a front-end developer living in Toronto, ON developing
-                websites with
-                <br />
-                an optimized and accessibility driven mindset.
+                I'm a front-end developer living in Toronto, ON.
+                <br />I develop websites with an optimized and accessibility
+                driven mindset.
               </p>
               <SocialMedia links={data.site.siteMetadata.socialMedia} />
             </div>
