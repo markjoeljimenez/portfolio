@@ -51,7 +51,7 @@ export default class ProjectPanel extends React.Component<IProjectPanelProps> {
               <div className="panel__header">
                 <h2 className="panel__heading">
                   {this.props.settings.path &&
-                  this.props.settings.links?.websiteLink ? (
+                  this.props.settings.links.websiteLink ? (
                     this.props.settings.links &&
                     this.props.settings.featured ? (
                       <a

@@ -3,245 +3,249 @@
 $block: 'panel';
 
 .#{$block} {
-	$spacing-md: 7rem;
-	$spacing: $spacing-md / 2;
+  $spacing-md: 7rem;
+  $spacing: $spacing-md / 2;
 
-	margin-bottom: $spacing;
-	margin-top: $spacing;
-	position: relative;
+  margin-bottom: $spacing;
+  margin-top: $spacing;
+  position: relative;
 
-	@include media-min(md) {
-		margin-bottom: $spacing-md;
-		margin-top: $spacing-md;
-	}
+  @include media-min(md) {
+    margin-bottom: $spacing-md;
+    margin-top: $spacing-md;
+  }
 
-	&--light {
-		background-color: $grey-light;
-	}
+  &--light {
+    background-color: $grey-light;
+  }
 
-	&--dark {
-		background-color: $primary;
-		color: $white;
+  &--dark {
+    background-color: $primary;
+    color: $white;
 
-		.#{$block}__rte {
-			color: $white;
-		}
+    .#{$block}__rte {
+      color: $white;
+    }
 
-		.#{$block}__footer {
-			.#{$block}__link {
-				color: $white;
-			}
+    .#{$block}__footer {
+      .#{$block}__link {
+        color: $white;
+      }
 
-			svg {
-				fill: $white;
-			}
-		}
-	}
+      svg {
+        fill: $white;
+      }
+    }
+  }
 
-	&--reverse {
-		.row {
-			display: flex;
-			flex-direction: column;
+  &--reverse {
+    .row {
+      display: flex;
+      flex-direction: column;
 
-			@include media-min(md) {
-				flex-direction: row;
-			}
-		}
+      @include media-min(md) {
+        flex-direction: row;
+      }
+    }
 
-		.column {
-			flex-basis: auto;
-			order: 1;
-		}
+    .column {
+      flex-basis: auto;
+      order: 1;
+    }
 
-		.#{$block}__content {
-			order: 2;
+    .#{$block}__content {
+      order: 2;
 
-			@include media-min(md) {
-				order: initial;
-			}
-		}
-	}
+      @include media-min(md) {
+        order: initial;
+      }
+    }
+  }
 
-	&--has-background-color {
-		margin: 0;
-		padding-bottom: $spacing;
-		padding-top: $spacing;
+  &--has-background-color {
+    margin: 0;
+    padding-bottom: $spacing;
+    padding-top: $spacing;
 
-		@include media-min(md) {
-			padding-bottom: $spacing-md;
-			padding-top: $spacing-md;
-		}
+    @include media-min(md) {
+      padding-bottom: $spacing-md;
+      padding-top: $spacing-md;
+    }
 
-		&.#{$block}--small-spacing {
-			margin: 0;
+    &.#{$block}--small-spacing {
+      margin: 0;
 
-			@include media-min(md) {
-				padding-bottom: $spacing;
-				padding-top: $spacing;
-			}
-		}
-	}
+      @include media-min(md) {
+        padding-bottom: $spacing;
+        padding-top: $spacing;
+      }
+    }
+  }
 
-	&--has-background-image {
-		margin: 0;
-	}
+  &--has-background-image {
+    margin: 0;
+  }
 
-	&--small-spacing {
-		@include media-min(md) {
-			margin-bottom: $spacing;
-			margin-top: $spacing;
-		}
-	}
+  &--small-spacing {
+    @include media-min(md) {
+      margin-bottom: $spacing;
+      margin-top: $spacing;
+    }
+  }
 
-	&--text-align {
-		&-center {
-			text-align: center;
-		}
-	}
+  &--text-align {
+    &-center {
+      text-align: center;
+    }
+  }
 
-	&__background-picture {
-		bottom: 0;
-		display: block;
-		left: 0;
-		overflow: hidden;
-		position: absolute;
-		right: 0;
-		top: -150%;
+  &__background-picture {
+    bottom: 0;
+    display: block;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: -150%;
 
-		&::after {
-			background-color: rgba($primary, 0.70);
-			bottom: 0;
-			content: '';
-			left: 0;
-			position: absolute;
-			right: 0;
-			top: 0;
-		}
-	}
+    &::after {
+      background-color: rgba($primary, 0.7);
+      bottom: 0;
+      content: '';
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
 
-	&__background-image {
-		object-position: center center;
-		width: 100%;
-	}
+  &__background-image {
+    object-position: center center;
+    width: 100%;
+  }
 
-	&__content {
-		order: 1;
-	}
+  &__content {
+    order: 1;
+  }
 
-	&__container {
-		@include container;
-	}
+  &__container {
+    @include container;
+  }
 
-	&__picture,
-	&__image {
-		display: block;
-		width: 100%;
-	}
+  &__picture,
+  &__image {
+    display: block;
+    width: 100%;
+  }
 
-	&__heading {
-		@include font-size-33;
-		@include font-weight(100);
-		
-		margin: 0;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		
-		@include media-min(sm) {
-			@include font-size-48;
-		}
+  &__heading {
+    @include font-size-33;
+    @include font-weight(100);
 
-		a {
-			white-space: nowrap;
-		}
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
 
-		svg {
-			margin-left: 1rem;
-		}
-	}
-	
-	&__subheading {
-		@include font-size-24;
+    @include media-min(sm) {
+      @include font-size-48;
+    }
 
-		a {
-			@include color-states($white, $white, $white);
+    a {
+      white-space: nowrap;
+    }
 
-			box-shadow: inset 0 -1px 0 rgba($white, .35);
+    svg {
+      margin-left: 1rem;
+    }
+  }
 
-			@include hover-focus {
-				box-shadow: inset 0 -1px 0 $white;
-				text-decoration: none;
-			}
-		}
-	}
+  &__subheading {
+    @include font-size-24;
 
-	&__client {
-		@include font-size-18;
+    a {
+      @include color-states($white, $white, $white);
 
-		color: $grey-darker;
-		padding-left: 2rem;
-		position: relative;
+      box-shadow: inset 0 -1px 0 rgba($white, 0.35);
 
-		&::before {
-			$border-height: 1px;
+      @include hover-focus {
+        box-shadow: inset 0 -1px 0 $white;
+        text-decoration: none;
+      }
+    }
+  }
 
-			border-bottom: $border-height solid $grey;
-			content: '';
-			position: absolute;
-			left: 0;
-			top: 0.75rem;
-			margin-top: -$border-height / 2;
-			width: 1.5rem;
-		}
+  &__client {
+    @include font-size-18;
 
-		.pill {
-			margin-left: 1rem;
-		}
-	}
+    color: $grey-darker;
+    padding-left: 2rem;
+    position: relative;
 
-	&__list {
-		@include clean-list;
+    &::before {
+      $border-height: 1px;
 
-		text-align: left;
-	}
+      border-bottom: $border-height solid $grey;
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      margin-top: -$border-height / 2;
+      width: 1.5rem;
+    }
 
-	&__item {
-		margin-bottom: 1rem;
-		margin-top: 1rem;
+    .pill {
+      margin-left: 1rem;
+    }
+  }
 
-		&:first-child {
-			margin-top: 0;
-		}
+  &__list {
+    @include clean-list;
 
-		&:last-child {
-			margin-bottom: 0;
-		}
-	}
+    text-align: left;
+  }
 
-	&__rte,
-	&__short-description {
-		color: $primary;
-	}
+  &__item {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
 
-	&__short-description {
-		@include font-weight(100);
-	}
+    &:first-child {
+      margin-top: 0;
+    }
 
-	&__footer {
-		text-align: center;
-		margin-top: 2rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
-		@include media-min(md) {
-			text-align: initial;
-		}
-	}
+  &__rte,
+  &__short-description {
+    color: $primary;
+  }
 
-	&__link {
-		&--icon {
-			svg {
-				fill: $primary;
-				margin-right: 0.5rem;
-				vertical-align: middle;
-			}
-		}
-	}
+  &__short-description {
+    @include font-weight(100);
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    margin-top: 2rem;
+
+    @include media-min(md) {
+      text-align: initial;
+    }
+  }
+
+  &__link {
+    &--icon {
+      svg {
+        fill: $primary;
+        margin-right: 0.5rem;
+        vertical-align: middle;
+      }
+    }
+  }
 }
