@@ -41,6 +41,7 @@ export default () => (
               content {
                 json
               }
+              order
               client
               date
               display
@@ -108,10 +109,11 @@ export default () => (
           <section id="projects">
             {data.allContentfulProject.edges
               .filter(project => !project.node.featured && project.node.display)
-              .sort(
-                (a, b) =>
-                  new Date(b.node.date).getTime() -
-                  new Date(a.node.date).getTime()
+              .sort((a, b) =>
+                a.node.order && b.node.order
+                  ? a.node.order - b.node.order
+                  : new Date(b.node.date).getTime() -
+                    new Date(a.node.date).getTime()
               )
               .map((project, i) => (
                 <ProjectPanel key={i} settings={project.node} />
