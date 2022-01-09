@@ -188,7 +188,7 @@ export default class ProjectPanel extends React.Component<IProjectPanelProps> {
                 ''
               )}
             </div>
-            {this.props.settings.blogPosts && !this.props.settings.featured ? (
+            {/* {this.props.settings.blogPosts && !this.props.settings.featured ? (
               <div
                 className={`column column--md-4 ${
                   this.props.settings.blogPosts.length < 1
@@ -212,7 +212,7 @@ export default class ProjectPanel extends React.Component<IProjectPanelProps> {
               </div>
             ) : (
               ''
-            )}
+            )} */}
           </div>
         </div>
       </section>

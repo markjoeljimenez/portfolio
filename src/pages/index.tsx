@@ -84,6 +84,9 @@ export default () => (
               </picture>
               <h1 className="hero-panel__heading">Mark Jimenez</h1>
               <p className="hero-panel__summary">
+                <strong>Software Development Engineer @ Autodesk</strong>
+              </p>
+              <p className="hero-panel__summary">
                 I develop websites with an optimized and accessibility driven
                 mindset.
               </p>
